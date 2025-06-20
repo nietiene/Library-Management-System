@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require("express");
 const Book_Configuration = require("./Book_Configuration");
+const Autor_Configuration = require("./Author_Configuration");
 
 require("dotenv").config();
 
@@ -24,6 +25,7 @@ app.use('/Add_New_Book', Book_Configuration); // add new book
 app.use('/Update_Book', Book_Configuration);
 app.use('/Delete_Book', Book_Configuration);
 app.use('/Get_Sigle_Book', Book_Configuration);
+app.use('/Author_Details', Autor_Configuration);
 
 const PORT = process.env.PORT;
 
