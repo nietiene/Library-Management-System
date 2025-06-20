@@ -16,4 +16,23 @@ const Update_Author = () => {
     }).catch((err) => {
         setError(err.data.error);
     });
+
+    return (
+        <div>
+            <form onSubmit={handleAddNewAuthor}>
+                {error && <p style={{color: 'red'}}>{error}</p>}
+                <label>Name</label>
+                <input type="text" name="name" 
+                onChange={(e) => setName(e.target.value)}
+                value={name}/> <br />
+
+                <label>Bio</label>
+                <input type="text" name="bio" 
+                onChange={(e) => setBio(e.target.value)}
+                value={bio}/> <br />
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    )
 }
