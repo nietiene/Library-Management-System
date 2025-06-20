@@ -1,7 +1,7 @@
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require("express");
-const Add_New_Book = require("./Add_Book");
+const Book_Configuration = require("./Book_Configuration");
 
 require("dotenv").config();
 
@@ -15,7 +15,8 @@ app.get('/homepage', (req, res) => {
       res.json("Welcome To Library managment system");
 });
 
-app.use('/Add_New_Book', Add_New_Book);
+app.use('/Add_New_Book', Book_Configuration);
+app.use('/Update_Book/Update_Book/:book_id', Book_Configuration);
 
 const PORT = process.env.PORT;
 

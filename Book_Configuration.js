@@ -16,4 +16,18 @@ router.post('/', (req, res) => {
      });
 });
 
+router.put('/:book_id', (req, res) => {
+      const { book_id } = req.params;
+      const { title, isbn, publisher, publication_year, copies_available, category } = req.body; 
+
+      const sql = "UPDATE book SET  title = ?, isbn = ?, publisher = ?, publication_year= ?, copies_available = ?, category = ? WHERE book_id = ?";
+      connection.query(sql, [ title, isbn, publisher, publication_year, copies_available, category, book_id], (err) => {
+        if (err) {
+            res.json({ERROR: err.message});
+        } else {
+            res.json("User Updated successfully");
+        }
+      });
+})
+
 module.exports = router;
