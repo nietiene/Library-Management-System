@@ -28,6 +28,7 @@ const Book_List = () => {
           <th>Publication Year</th>
           <th>Number of Copies</th>
           <th>Category</th>
+          <th>Modify</th>
         </tr>
 
        {book.map((book) => (
@@ -38,6 +39,8 @@ const Book_List = () => {
           <td>{book.publication_year}</td>
           <td>{book.copies_available}</td>
           <td>{book.category}</td>
+          <td><a href="">Update</a></td>
+          <td><a href="">Delete</a></td>
         </tr>
        ))}
       </table>
