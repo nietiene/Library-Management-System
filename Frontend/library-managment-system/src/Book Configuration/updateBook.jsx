@@ -18,12 +18,13 @@ const Update_Book = () => {
       const handleFectchUser = () => {
         axios.get(`http://localhost:3000/Get_Sigle_Book/${book_id}`)
         .then((res) => {
-            setTitle(res.Book_List.title);
-            setIsbn(res.Book_List.isbn);
-            setPublisher(res.Book_List.publisher);
-            setPublication_year(res.Book_List.publication_year);
-            setCopies_available(res.Book_List.copies_available);
-            setCategory(res.Book_List.category);
+            const book = res.data.Book_List[0];
+            setTitle(book.title);
+            setIsbn(book.isbn);
+            setPublisher(book.publisher);
+            setPublication_year(book.publication_year);
+            setCopies_available(book.copies_available);
+            setCategory(book.category);
         }).catch((err) => {
             setError(err.data.error);
         });
