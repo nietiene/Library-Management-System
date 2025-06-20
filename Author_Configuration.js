@@ -1,8 +1,8 @@
 const connection = require("./Conn");
 const express = require("express");
-const App = express.Router();
+const router = express.Router();
 
-App.post('/', (req, res) => {
+router.post('/', (req, res) => {
       const { name, bio } = req.body;
       const sql = "INSERT INTO author(name, bio) VALUES(?, ?)";
       connection.query(sql, [ name, bio ], (err) => {
@@ -15,4 +15,4 @@ App.post('/', (req, res) => {
 })
 
 
-module.exports = App;
+module.exports = router;
