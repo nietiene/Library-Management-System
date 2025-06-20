@@ -22,6 +22,7 @@ app.get('/homepage', (req, res) => {
 app.use('/Books_list', Book_Configuration);
 app.use('/Add_New_Book', Book_Configuration); // add new book
 app.use('/Update_Book', Book_Configuration);
+app.use('/Delete_Book', Book_Configuration);
 app.use('/Get_Sigle_Book', Book_Configuration);
 
 const PORT = process.env.PORT;

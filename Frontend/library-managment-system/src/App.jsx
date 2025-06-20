@@ -2,6 +2,7 @@ import Add_Book from "./Book Configuration/Add_Book"
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import Book_List from "./Book Configuration/book_list"
 import Dashboard from "./Home Page/Dashboard"
+import Delete_Book from "./Book Configuration/deleteBook"
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
               <Route path="/" element={<Dashboard />}/>
               <Route path="/Book_list" element={<Book_List />}/>
               <Route path="/Add_New_Book" element={<Add_Book/>}/>
+              <Route path="/deleteBook" element={<Delete_Book/>}/>
           </Routes>
         </Router>
 

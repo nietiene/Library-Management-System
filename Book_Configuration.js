@@ -28,6 +28,18 @@ router.get('/:book_id', (req, res) => {
         });
 });
 
+router.delete('/:book_id', (req, res) => {
+        const { book_id } = req.params;
+        const sql = "DELETE FROM book WHERE book_id = ?";
+        connection.query(sql, [book_id] , (err) => {
+            if (err) {
+               throw err;
+            } else {
+                 res.json({message: "Book deleted successfully !!"});
+           }
+        });
+});
+
 
 router.put('/:book_id', (req, res) => {
       const { book_id } = req.params;

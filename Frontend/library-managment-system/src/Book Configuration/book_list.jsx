@@ -34,14 +34,15 @@ const Book_List = () => {
 
        {book.map((book) => (
         <tr key={book.book_id}>
+          <td>{book.book_id}</td>
           <td>{book.title}</td>
           <td>{book.isbn}</td>
           <td>{book.publisher}</td>
           <td>{book.publication_year}</td>
           <td>{book.copies_available}</td>
           <td>{book.category}</td>
-          <td><Link to={`/Update/${book.book_id}`}>Update</Link></td>
-          <td><Link to={`/Delete/${book.book_id}`}>Delete</Link></td>
+          <td><Link to={`/UpdateBook/${book.book_id}`}>Update</Link></td>
+          <td><Link to={`/deleteBook/${book.book_id}`}>Delete</Link></td>
         </tr>
        ))}
       </table>
