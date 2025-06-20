@@ -23,7 +23,7 @@ router.get('/:book_id', (req, res) => {
             if (err) {
                throw err;
             } else {
-                 res.json({User_List: data});
+                 res.json({Book_List: data});
            }
         });
 });
