@@ -20,6 +20,7 @@ const Book_List = () => {
 
   return (
     <div>
+      <Link to={'add_book'}>Add Book</Link>
       {error && <p style={{color: 'red'}}>{error}</p>}
       <table border={2}>
         <tr>
