@@ -4,6 +4,7 @@ import Book_List from "./Book Configuration/book_list"
 import Dashboard from "./Home Page/Dashboard"
 import Delete_Book from "./Book Configuration/Delete_Book"
 import Update_Book from "./Book Configuration/updateBook"
+import Add_New_Author from "./Author Configuration/Add_Author"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
               <Route path="/Add_New_Book" element={<Add_Book />}/>
               <Route path="/Delete_Book/:book_id" element={<Delete_Book />}/>
               <Route path="/UpdateBook/:book_id" element={<Update_Book />}/>
+              <Route path="/Add_Author" element={<Add_New_Author />}/>
           </Routes>
         </Router>
 
