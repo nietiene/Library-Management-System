@@ -12,7 +12,7 @@ function App() {
               <Route path="/" element={<Dashboard />}/>
               <Route path="/Book_list" element={<Book_List />}/>
               <Route path="/Add_New_Book" element={<Add_Book/>}/>
-              <Route path="/Delete_Book" element={<Delete_Book/>}/>
+              <Route path="/Delete_Book/:book_id" element={<Delete_Book/>}/>
           </Routes>
         </Router>
 

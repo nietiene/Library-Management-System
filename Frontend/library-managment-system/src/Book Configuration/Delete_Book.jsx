@@ -10,7 +10,7 @@ const Delete_Book = () => {
 
     axios.delete(`http://localhost:3000/Delete_Book/${book_id}`)
     .then(() => {
-         navigate('/');
+         navigate('/Book_list');
     }).catch ((err) => {
         setError(err.data.error);
     });
