@@ -25,5 +25,15 @@ router.get('/', (req, res) => {
       }) 
 });
 
+router.put('/:author_id', (req, res) => {
+     const { id } = req.params;
+     const sql = "UPDATE author SET name = ? , bio = ? WHERE author_id = ?";
+     connection.query(sql, [id], (err) => {
+      if (err){
+        res.json({message: "Author Updated Successfully"});
+      }
+     })
+})
+
 
 module.exports = router;
