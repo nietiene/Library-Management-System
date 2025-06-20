@@ -26,10 +26,12 @@ router.get('/', (req, res) => {
 });
 
 router.put('/:author_id', (req, res) => {
-     const { id } = req.params;
+     const { author_id } = req.params;
+     const { name, bio } = req.body;
+
      const sql = "UPDATE author SET name = ? , bio = ? WHERE author_id = ?";
-     connection.query(sql, [id], (err) => {
-      
+     connection.query(sql, [name, bio, author_id], (err) => {
+
       if (err) {
         res.json({error: err.message});
       }else{
