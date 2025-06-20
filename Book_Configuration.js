@@ -50,7 +50,7 @@ router.put('/:book_id', (req, res) => {
         if (err) {
             res.json({ERROR: err.message});
         } else {
-            res.json("Book Updated successfully");
+            res.json({message: "Book Updated successfully"});
         }
       });
 });

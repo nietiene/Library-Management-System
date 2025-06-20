@@ -9,12 +9,14 @@ const Update_Book = () => {
     const [ publication_year, setPublication_year ] = useState("");
     const [ copies_available, setCopies_available ] = useState("");
     const [ category, setCategory ] = useState("");
-    // const [ message, setMessage ] = useState("");
+    const [ message, setMessage ] = useState("");
     const [ error, setError ] = useState(null);
 
     const { book_id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
+
       const handleFectchUser = () => {
         axios.get(`http://localhost:3000/Get_Sigle_Book/${book_id}`)
         .then((res) => {
@@ -30,13 +32,28 @@ const Update_Book = () => {
         });
     }
    handleFectchUser(); 
-})
+});
+
+
+  const handleUpdateBook = (e) => {
+    e.preventDefault();
+    axios.put(`http://localhost:3000/Update_Book/${book_id}`)
+    .then((res) => {
+       setMessage(res.data.message);
+       navigate('/Book_List');
+    }).catch((err) => {
+        setError(err.data.error);
+    })
+  }
+ 
+
+
    if (error) return <p>{error}</p>
 
 
     return (
         <div>
-        <form>
+        <form onSubmit={handleUpdateBook}>
           <label>Title</label>
           <input type="text" name="title" 
               onChange={(e) => setTitle(e.target.value)}
