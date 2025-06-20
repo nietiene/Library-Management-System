@@ -15,7 +15,8 @@ app.get('/homepage', (req, res) => {
       res.json("Welcome To Library managment system");
 });
 
-app.use('/Add_New_Book', Book_Configuration);
+app.use('/Books_list/Books_list', Book_Configuration);
+app.use('/', Book_Configuration); // add new book
 app.use('/Update_Book/Update_Book/:book_id', Book_Configuration);
 
 const PORT = process.env.PORT;

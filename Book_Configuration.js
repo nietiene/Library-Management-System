@@ -28,6 +28,17 @@ router.put('/:book_id', (req, res) => {
             res.json("User Updated successfully");
         }
       });
-})
+});
+router.get('/Books_list', (req, res) => {
+
+      const sql = "SELECT * FROM book";
+      connection.query(sql, (err, data) => {
+        if (err) {
+            res.json({ERROR: err.message});
+        } else {
+            res.json({UserList: data});
+        }
+      });
+});
 
 module.exports = router;
