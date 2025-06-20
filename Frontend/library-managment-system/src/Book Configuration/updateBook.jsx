@@ -37,12 +37,14 @@ const Update_Book = () => {
 
   const handleUpdateBook = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:3000/Update_Book/${book_id}`)
+    axios.put(`http://localhost:3000/Update_Book/${book_id}`, {
+        title, isbn, publisher, publication_year, copies_available, category
+    })
     .then((res) => {
        setMessage(res.data.message);
        navigate('/Book_List');
-    }).catch((err) => {
-        setError(err.data.error);
+    }).catch(() => {
+        setError("Book Not updated");
     })
   }
  
