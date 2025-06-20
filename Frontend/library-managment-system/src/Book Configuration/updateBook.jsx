@@ -32,7 +32,7 @@ const Update_Book = () => {
         });
     }
    handleFectchUser(); 
-});
+}, [book_id]);
 
 
   const handleUpdateBook = (e) => {
