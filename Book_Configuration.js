@@ -16,11 +16,24 @@ router.post('/', (req, res) => {
      });
 });
 
+router.get('/:book_id', (req, res) => {
+        const { book_id } = req.params;
+        const sql = " SELECT * FROM book WHERE book_id = ?";
+        connection.query(sql, [book_id] , (err, data) => {
+            if (err) {
+               throw err;
+            } else {
+                 res.json({User_List: data});
+           }
+        });
+});
+
+
 router.put('/:book_id', (req, res) => {
       const { book_id } = req.params;
       const { title, isbn, publisher, publication_year, copies_available, category } = req.body; 
 
-      const sql = "UPDATE book SET  title = ?, isbn = ?, publisher = ?, publication_year= ?, copies_available = ?, category = ? WHERE book_id = ?";
+      const sql = "UPDATE book SET  title = ?, isbn = ?, publisher = ?, publication_year = ?, copies_available = ?, category = ? WHERE book_id = ?";
       connection.query(sql, [ title, isbn, publisher, publication_year, copies_available, category, book_id], (err) => {
         if (err) {
             res.json({ERROR: err.message});
