@@ -9,9 +9,9 @@ router.post('/', (req, res) => {
      const sql = "INSERT INTO book(title, isbn, publisher, publication_year, copies_available, category) VALUES(?,?,?,?,?,?)";
      connection.query(sql, [ title, isbn, publisher, publication_year, copies_available, category ], (err) => {
         if (err) {
-            res.json({ERROR: err.message});
+            res.json({error: err.message});
         } else {
-            res.json("New Book Addedd successfully");
+            res.json({message: "New Book Addedd successfully"});
         }
      });
 });
