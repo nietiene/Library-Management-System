@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios"
 
 const Book_List = () => {
-    
     const [ book, setBook ] = useState();
     const [ error, setError ] = useState(null);
 
-    const handleUpdateBook = () => {
+  useEffect(() => {
    
        axios.get(`http://localhost:3000/Books_list`,)
        .then((res) => {
@@ -15,7 +14,8 @@ const Book_List = () => {
         setError(err.data.error);
        })
 
-    }
+    
+  })
 
   return (
     <div>
