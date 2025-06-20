@@ -20,17 +20,18 @@ const Book_List = () => {
 
   return (
     <div>
-      <Link to={'add_book'}>Add Book</Link>
+      <Link to={'/Add_New_Book'}>Add Book</Link>
       {error && <p style={{color: 'red'}}>{error}</p>}
       <table border={2}>
         <tr>
+          <th>Book Code</th>
           <th>Tittle</th>
           <th>Isbn</th>
           <th>Publisher</th>
           <th>Publication Year</th>
           <th>Number of Copies</th>
           <th>Category</th>
-          <th>Modify</th>
+          <th colSpan={2}>Modify</th>
         </tr>
 
        {book.map((book) => (
