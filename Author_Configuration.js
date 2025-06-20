@@ -37,8 +37,21 @@ router.put('/:author_id', (req, res) => {
       }else{
         res.json({message: "Author Updated Successfully"});
       }
-     })
-})
+     });
+});
+
+router.get('/:author_id', (req, res) => {
+  
+      const { author_id } = req.params;
+      const sql = "SELECT * FROM author WHERE author_id = ?";
+      connection.query(sql, [author_id], (err, data) => {
+        if (err) {
+            res.json({error: err.message});
+        } else {
+            res.json({Author: data});
+        }
+      }) 
+});
 
 
 module.exports = router;
