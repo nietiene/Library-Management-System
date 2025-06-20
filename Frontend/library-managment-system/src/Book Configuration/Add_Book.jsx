@@ -13,7 +13,7 @@ const Add_New_Book = () => {
     const [ error, setError ] = useState(null);
 
     const handleAddNewBook = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         console.log("Received data!!:", title, isbn, publication_year);
 
        axios.post(`http://localhost:3000/Add_New_Book`, 
@@ -55,6 +55,8 @@ const Add_New_Book = () => {
            onChange={(e) => setCategory(e.target.value)} /> <br />
 
           <button type="submit">Save Book</button>
+
+          {message && <p style={{color: 'green'}}>{message}</p>}
        </form>
     </div>
   )      
