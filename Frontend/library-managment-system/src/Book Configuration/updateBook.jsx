@@ -69,3 +69,5 @@ const Update_Book = () => {
         </div>
     )
 }
+
+export default Update_Book
