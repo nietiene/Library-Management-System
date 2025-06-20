@@ -3,7 +3,7 @@ const connection = require("./Conn");
 const router = express.Router();
 
 
-router.post('/Add_New_Book', (req, res) => {
+router.post('/', (req, res) => {
      const { title, isbn, publisher, publication_year, copies_available, category } = req.body;
 
      const sql = "INSERT INTO book(title, isbn, publisher, publication_year, copies_available, category) VALUES(?,?,?,?,?,?)";
