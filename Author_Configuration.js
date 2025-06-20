@@ -7,7 +7,7 @@ router.post('/', (req, res) => {
       const sql = "INSERT INTO author(name, bio) VALUES(?, ?)";
       connection.query(sql, [ name, bio ], (err) => {
         if (err) {
-            throw err;
+            res.json({error: err.message});
         } else {
             res.json({message: "Author Added Successfully"});
         }
