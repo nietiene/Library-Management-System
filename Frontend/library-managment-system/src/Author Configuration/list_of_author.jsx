@@ -18,6 +18,7 @@ const List_Of_Authors = () => {
 
  return (
   <div>
+    <Link to={'/Add_Author'}>Add New</Link>
     <table border={2} cellPadding={5}>
         <tr>
             <th>Author Code</th>
