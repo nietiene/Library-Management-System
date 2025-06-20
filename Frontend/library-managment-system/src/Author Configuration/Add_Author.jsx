@@ -7,8 +7,9 @@ const Add_New_Author = () => {
     const [message, setMessage] = useState();
     const [error, setError] = useState(null);
 
-  const handleAddNewAuthor = () => {
-
+  const handleAddNewAuthor = (e) => {
+    e.preventDefault();
+    
     axios.post(`http://localhost:3000/Add_Author`, { name, bio})
     .then((res) => {
         setMessage(res.data.message);
@@ -16,12 +17,12 @@ const Add_New_Author = () => {
         setError(err.data.error);
     })
   }  
-    if (error) return <p style={{color: 'red'}}>{error}</p>
-    if (message) return <p style={{color: 'Green'}}>{message}</p>
 
     return (
         <div>
             <form onSubmit={handleAddNewAuthor}>
+                {error && <p style={{color: 'red'}}>{error}</p>}
+                {message && <p style={{color: 'Green'}}>{message}</p>}
                 <label>Name</label>
                 <input type="text" name="name" 
                 onChange={(e) => setName(e.target.value)}/> <br />
