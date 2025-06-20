@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
+import { Link } from "react-router-dom";
 
 const Book_List = () => {
     const [ book, setBook ] = useState([]);
@@ -39,8 +40,8 @@ const Book_List = () => {
           <td>{book.publication_year}</td>
           <td>{book.copies_available}</td>
           <td>{book.category}</td>
-          <td><a href="">Update</a></td>
-          <td><a href="">Delete</a></td>
+          <td><Link to={`/Update/${book.book_id}`}>Update</Link></td>
+          <td><Link to={`/Delete/${book.book_id}`}>Delete</Link></td>
         </tr>
        ))}
       </table>
@@ -48,4 +49,4 @@ const Book_List = () => {
   )      
 }
 
-export default Book_List;
+export default Book_List
