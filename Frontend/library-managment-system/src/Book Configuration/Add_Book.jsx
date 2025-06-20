@@ -3,14 +3,14 @@ import axios from "axios"
 
 const Add_New_Book = () => {
 
-    const { title, setTitle } = useState("");
-    const { isbn, setIsbn } = useState("");
-    const { publisher, setPublisher } = useState("");
-    const { publication_year, setPublication_year } = useState("");
-    const { copies_available, setCopies_available } = useState("");
-    const { category, setCategory } = useState("");
-    const { message, setMessage } = useState("");
-    const { error, setError } = useState(null);
+    const [ title, setTitle ] = useState("");
+    const [ isbn, setIsbn ] = useState("");
+    const [ publisher, setPublisher ] = useState("");
+    const [ publication_year, setPublication_year ] = useState("");
+    const [ copies_available, setCopies_available ] = useState("");
+    const [ category, setCategory ] = useState("");
+    const [ message, setMessage ] = useState("");
+    const [ error, setError ] = useState(null);
 
     const handleAddNewBook = () => {
           const New_Book = axios.post(`http://localhost:3000/Add_New_Book/Add_New_Book`, 
@@ -55,3 +55,5 @@ const Add_New_Book = () => {
     </div>
   )      
 }
+
+export default Add_New_Book;
