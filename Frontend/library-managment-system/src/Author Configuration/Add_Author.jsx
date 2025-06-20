@@ -29,7 +29,11 @@ const Add_New_Author = () => {
                 <label>Bio</label>
                 <input type="text" name="bio" 
                 onChange={(e) => setBio(e.target.value)}/> <br />
+
+                <button type="submit">Save Author</button>
             </form>
         </div>
     )
 }
+
+export default Add_New_Author
