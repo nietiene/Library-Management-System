@@ -12,8 +12,9 @@ const Add_New_Book = () => {
     const [ message, setMessage ] = useState("");
     const [ error, setError ] = useState(null);
 
-    const handleAddNewBook = () => {
-          const New_Book = axios.post(`http://localhost:3000/Add_New_Book/Add_New_Book`, 
+    const handleAddNewBook = (e) => {
+        e.preventDefault();
+          const New_Book = axios.post(`http://localhost:3000/Add_New_Book`, 
                           {title, isbn, publisher, publication_year, copies_available, category})
                           .then((resp) => {
                                 setMessage(resp.data.message);
