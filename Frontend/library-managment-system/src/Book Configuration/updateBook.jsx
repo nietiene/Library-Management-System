@@ -27,4 +27,45 @@ const Update_Book = () => {
             setError(err.data.error);
         });
     }
+
+
+    return (
+        <div>
+        <form onSubmit={handleAddNewBook}>
+          <label>Title</label>
+          <input type="text" name="title" 
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}/> <br />
+
+          <label>Isbn</label>
+          <input type="text" name="isbn" 
+              onChange={(e) => setIsbn(e.target.value)}
+              value={isbn}/> <br />
+
+          <label>Publisher Name</label>
+          <input type="text" name="publisher" 
+           onChange={(e) => setPublisher(e.target.value)} 
+           value={publisher}/> <br />
+
+          <label>Publication Year</label>
+          <input type="text" name="publication_year" 
+           onChange={(e) => setPublication_year(e.target.value)} 
+           value={publication_year}/> <br />
+
+          <label>Number of copies</label>
+          <input type="text" name="copies_available" 
+           onChange={(e) => setCopies_available(e.target.value)} 
+           value={copies_available}/> <br />
+
+          <label>Book Category</label>
+          <input type="text" name="category" 
+           onChange={(e) => setCategory(e.target.value)} 
+           value={category}/> <br />
+
+          <button type="submit">Save Book</button>
+
+          {message && <p style={{color: 'green'}}>{message}</p>}
+       </form>
+        </div>
+    )
 }
