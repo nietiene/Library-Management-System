@@ -42,7 +42,7 @@ const Book_List = () => {
           <td>{book.copies_available}</td>
           <td>{book.category}</td>
           <td><Link to={`/UpdateBook/${book.book_id}`}>Update</Link></td>
-          <td><Link to={`/deleteBook/${book.book_id}`}>Delete</Link></td>
+          <td><Link to={`/Delete_Book/${book.book_id}`}>Delete</Link></td>
         </tr>
        ))}
       </table>
