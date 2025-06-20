@@ -13,7 +13,7 @@ const Add_New_Book = () => {
     const [ error, setError ] = useState(null);
 
     const handleAddNewBook = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         console.log("Received data!!:", title, isbn, publication_year);
 
        axios.post(`http://localhost:3000/Add_New_Book`, 
@@ -29,7 +29,7 @@ const Add_New_Book = () => {
 
   return (
     <div>
-       <form onSubmit={handleAddNewBook} method="post">
+       <form onSubmit={handleAddNewBook}>
           <label>Title</label>
           <input type="text" name="title" 
               onChange={(e) => setTitle(e.target.value)}/> <br />

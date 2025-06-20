@@ -29,7 +29,7 @@ router.put('/:book_id', (req, res) => {
         }
       });
 });
-router.get('/Books_list', (req, res) => {
+router.get('/', (req, res) => {
 
       const sql = "SELECT * FROM book";
       connection.query(sql, (err, data) => {
