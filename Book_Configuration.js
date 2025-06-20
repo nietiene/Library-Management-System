@@ -21,7 +21,7 @@ router.get('/:book_id', (req, res) => {
         const sql = " SELECT * FROM book WHERE book_id = ?";
         connection.query(sql, [book_id] , (err, data) => {
             if (err) {
-               throw err;
+               res.json({error: err.message});
             } else {
                  res.json({Book_List: data});
            }

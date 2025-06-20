@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Update_Book = () => {
@@ -9,12 +9,13 @@ const Update_Book = () => {
     const [ publication_year, setPublication_year ] = useState("");
     const [ copies_available, setCopies_available ] = useState("");
     const [ category, setCategory ] = useState("");
-    const [ message, setMessage ] = useState("");
+    // const [ message, setMessage ] = useState("");
     const [ error, setError ] = useState(null);
 
     const { book_id } = useParams();
 
-    const handleFectchUser = () => {
+    useEffect(() => {
+      const handleFectchUser = () => {
         axios.get(`http://localhost:3000/Get_Sigle_Book/${book_id}`)
         .then((res) => {
             setTitle(res.Book_List.title);
@@ -27,11 +28,14 @@ const Update_Book = () => {
             setError(err.data.error);
         });
     }
+   handleFectchUser(); 
+})
+   if (error) return <p>{error}</p>
 
 
     return (
         <div>
-        <form onSubmit={handleAddNewBook}>
+        <form>
           <label>Title</label>
           <input type="text" name="title" 
               onChange={(e) => setTitle(e.target.value)}
@@ -64,7 +68,6 @@ const Update_Book = () => {
 
           <button type="submit">Save Book</button>
 
-          {message && <p style={{color: 'green'}}>{message}</p>}
        </form>
         </div>
     )
