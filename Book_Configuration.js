@@ -49,7 +49,7 @@ router.get('/', (req, res) => {
         if (err) {
             res.json({ERROR: err.message});
         } else {
-            res.json({UserList: data});
+            res.json({bookList: data});
         }
       });
 });
