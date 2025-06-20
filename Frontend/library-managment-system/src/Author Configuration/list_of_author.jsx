@@ -10,14 +10,15 @@ const List_Of_Authors = () => {
     useEffect(() => {
         axios.get(`http://localhost:3000/Author_List`)
         .then((res) => {
-            setAuthor(res.data.data);
+            setAuthor(res.data.Author);
         }).catch((err) => {
             setError(err.data.error);
         });
     });
 
- <div>
-    <table border={2}>
+ return (
+  <div>
+    <table border={2} cellPadding={5}>
         <tr>
             <th>Author Code</th>
             <th>Author Name</th>
@@ -25,12 +26,17 @@ const List_Of_Authors = () => {
             <th colSpan={2}>Modify</th>
         </tr>
         {author.map((author) => (
-            <tr key={index}>
-                <td>{author.id}</td>
+            <tr key={author.author_id}>
+                <td>{author.author_id}</td>
                 <td>{author.name}</td>
                 <td>{author.bio}</td>
+                <td><Link to={`Update_Author/${author.author_id}`}>Update</Link></td>
+                <td><Link to={`Delete_Author/${author.author_id}`}>Delete</Link></td>
             </tr>
         ))}
     </table>
  </div>
+)
 }
+
+export default List_Of_Authors;

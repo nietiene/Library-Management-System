@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
         if (err) {
             res.json({error: err.message});
         } else {
-            res.json(data);
+            res.json({Author: data});
         }
       }) 
 });
