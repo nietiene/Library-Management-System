@@ -12,7 +12,18 @@ router.post('/', (req, res) => {
             res.json({message: "Author Added Successfully"});
         }
       }) 
-})
+});
+
+router.get('/', (req, res) => {
+      const sql = "SELECT * FROM author";
+      connection.query(sql, (err, data) => {
+        if (err) {
+            res.json({error: err.message});
+        } else {
+            res.json(data);
+        }
+      }) 
+});
 
 
 module.exports = router;
