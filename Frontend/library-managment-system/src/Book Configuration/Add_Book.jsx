@@ -14,7 +14,8 @@ const Add_New_Book = () => {
 
     const handleAddNewBook = (e) => {
         e.preventDefault();
-          const New_Book = axios.post(`http://localhost:3000/Add_New_Book`, 
+
+        const New_Book = axios.post(`http://localhost:3000/Add_New_Book`, 
                           {title, isbn, publisher, publication_year, copies_available, category})
                           .then((resp) => {
                                 setMessage(resp.data.message);
@@ -28,30 +29,31 @@ const Add_New_Book = () => {
   return (
     <div>
        <form onSubmit={handleAddNewBook} method="post">
-        <label htmlFor="">Title</label>
-        <input type="text" name="title" 
+          <label>Title</label>
+          <input type="text" name="title" 
               onChange={(e) => setTitle(e.target.value)}/> <br />
 
-        <label htmlFor="">Isbn</label>
-        <input type="text" name="isbn" 
+          <label>Isbn</label>
+          <input type="text" name="isbn" 
               onChange={(e) => setIsbn(e.target.value)}/> <br />
 
-        <label htmlFor="">Publisher Name</label>
-        <input type="text" name="publisher" 
+          <label>Publisher Name</label>
+          <input type="text" name="publisher" 
            onChange={(e) => setPublisher(e.target.value)} /> <br />
-        <label htmlFor="">Publication Year</label>
-        <input type="text" name="publication_year" 
+
+          <label>Publication Year</label>
+          <input type="text" name="publication_year" 
            onChange={(e) => setPublication_year(e.target.value)} /> <br />
 
-        <label htmlFor="">Number of copies</label>
-        <input type="text" name="copies_available" 
+          <label>Number of copies</label>
+          <input type="text" name="copies_available" 
            onChange={(e) => setCopies_available(e.target.value)} /> <br />
 
-        <label htmlFor="">Book Category</label>
-        <input type="text" name="category" 
+          <label>Book Category</label>
+          <input type="text" name="category" 
            onChange={(e) => setCategory(e.target.value)} /> <br />
 
-       <button>Save Book</button>
+          <button>Save Book</button>
        </form>
     </div>
   )      
