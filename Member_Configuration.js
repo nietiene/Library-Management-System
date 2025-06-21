@@ -54,18 +54,18 @@ router.get('/:member_id', (req, res) => {
       }) 
 });
 
-// router.delete('/:author_id', (req, res) => {
+router.delete('/:member_id', (req, res) => {
 
-//       const { author_id } = req.params;
-//       const sql = "DELETE FROM author WHERE author_id = ?";
-//       connection.query(sql, [author_id], (err) => {
-//         if (err) {
-//             res.json({err: err.message});
-//         } else {
-//           res.json("Author Deleted successfully");
-//         }
-//       }) 
-// });
+      const { member_id } = req.params;
+      const sql = "DELETE FROM member WHERE member_id = ?";
+      connection.query(sql, [member_id], (err) => {
+        if (err) {
+            res.json({error: err.message});
+        } else {
+          res.json("Member Deleted successfully");
+        }
+      }) 
+});
 
 
 
