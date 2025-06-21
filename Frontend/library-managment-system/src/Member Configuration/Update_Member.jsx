@@ -13,7 +13,15 @@ const Update_Member = () => {
 
     useEffect(() => {
         const handleFetchUser = () => {
-             axios.get(``)
+             axios.get(`http://localhost:3000/Get_Single_Member/${member_id}`)
+             .then((res) => {
+                const member = res.data.member[0];
+                setName(member.name);
+                setEmail(member.email);
+                setAddress(member.address);
+                setAddress(member.address);
+                setMembership_date(member.membership_date);
+             })
         }
     })
 
