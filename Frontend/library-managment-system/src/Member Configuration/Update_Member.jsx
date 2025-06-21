@@ -51,7 +51,7 @@ const Update_Member = () => {
 
 return (
     <div>
-            <form onSubmit={handleAddMember}>
+            <form onSubmit={handleUpdateMember}>
                 <label>Name</label>
                 <input type="text" name="name" 
                 onChange={(e) => setName(e.target.value)}
