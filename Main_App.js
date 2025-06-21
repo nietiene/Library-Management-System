@@ -32,6 +32,8 @@ app.use('/Get_Single_Author', Author_Configuration);
 app.use('/Delete_Author', Author_Configuration);
 app.use('/Add_Member', Member_Configuration);
 app.use('/Member_List', Member_Configuration);
+app.use('/Update_Member', Member_Configuration);
+app.use('/Get_Single_Member', Member_Configuration);
 
 const PORT = process.env.PORT;
 
