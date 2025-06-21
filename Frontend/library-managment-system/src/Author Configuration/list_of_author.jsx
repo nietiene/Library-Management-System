@@ -31,8 +31,8 @@ const List_Of_Authors = () => {
                 <td>{author.author_id}</td>
                 <td>{author.name}</td>
                 <td>{author.bio}</td>
-                <td><Link to={`Update_Author/${author.author_id}`}>Update</Link></td>
-                <td><Link to={`Delete_Author/${author.author_id}`}>Delete</Link></td>
+                <td><Link to={`/Update_Author/${author.author_id}`}>Update</Link></td>
+                <td><Link to={`/Delete_Author/${author.author_id}`}>Delete</Link></td>
             </tr>
         ))}
     </table>

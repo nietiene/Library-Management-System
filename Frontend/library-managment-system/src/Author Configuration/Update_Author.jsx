@@ -19,7 +19,7 @@ const Update_Author = () => {
 
     return (
         <div>
-            <form onSubmit={handleAddNewAuthor}>
+            <form>
                 {error && <p style={{color: 'red'}}>{error}</p>}
                 <label>Name</label>
                 <input type="text" name="name" 
