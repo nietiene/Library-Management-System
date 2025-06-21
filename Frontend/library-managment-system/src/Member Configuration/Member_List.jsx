@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const UserList = () => {
     const [member, setMember] = useState("");
@@ -8,7 +8,31 @@ const UserList = () => {
     useEffect(() => {
         axios.get(`http://localhost:3000/Member_List`)
         .then((res) => {
-            const Member = res.data.Member[0];
+            setMember(res.data.Member);
+        }).catch((err) => {
+            console.log("Error", err);
         })
     })
+
+    return (
+        <div>
+            <table border={2}>
+                <tr>
+                    <th>Member Code</th>
+                    <th>Member Name</th>
+                    <th>Member Email</th>
+                    <th>Member Phone</th>
+                    <th>Member Address</th>
+                    <th>Membership Date</th>
+                    <th colSpan={2}>Modify</th>
+                </tr>
+                
+                {member.map((member) => (
+                    <tr>
+                        
+                    </tr>
+                ))}
+            </table>
+        </div>
+    )
 }
