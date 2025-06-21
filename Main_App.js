@@ -12,12 +12,11 @@ const app = express();
 app.use(express.json());
 
 app.use(session({
-
     secret: 'myScretKey',
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }
-    
+
 }))
 app.use(cors({
     origin:'http://localhost:5173',
