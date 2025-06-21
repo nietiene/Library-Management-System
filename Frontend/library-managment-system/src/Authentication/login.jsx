@@ -23,4 +23,22 @@ const Login = () => {
           setError(err.data.error);
         });
     }
+
+    return (
+        <div>
+            <form onSubmit={handleLogin}>
+                <label>Username</label>
+                <input type="text" name="username" 
+                  onChange={(e) => setUsername(e.target.value)}/> <br />
+
+                <label>Password</label>
+                <input type="password" name="passowrd" 
+                 onChange={(e) => setPassword(e.target.value)}
+                /> <br />
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    )
 }
+export default Login

@@ -16,7 +16,7 @@ router.post('/login', (req, res) => {
             }
             res.json({mesage: "Login Successfully", user: req.session.user})
          } else {
-            res.json("Invalid credentials")
+            res.json({error: "Invalid credentials"})
          }
     })
 })
