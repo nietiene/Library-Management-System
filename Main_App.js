@@ -1,6 +1,7 @@
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require("express");
+const session = require("express-session");
 const Book_Configuration = require("./Book_Configuration");
 const Author_Configuration = require("./Author_Configuration");
 const Member_Configuration = require('./Member_Configuration');
@@ -10,6 +11,14 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 
+app.use(session({
+
+    secret: 'myScretKey',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+    
+}))
 app.use(cors({
     origin:'http://localhost:5173',
 }));
