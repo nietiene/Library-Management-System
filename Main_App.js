@@ -46,6 +46,7 @@ app.use('/Update_Member', Member_Configuration);
 app.use('/Get_Single_Member', Member_Configuration);
 app.use('/Delete_Member', Member_Configuration);
 app.use("/auth", Login);
+app.use("/data", Login);
 
 const PORT = process.env.PORT;
 
