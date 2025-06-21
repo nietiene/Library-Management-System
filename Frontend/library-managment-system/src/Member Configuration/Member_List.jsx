@@ -12,11 +12,11 @@ const MemberList = () => {
         }).catch((err) => {
             console.log("Error", err);
         })
-    })
+    }, [])
 
     return (
         <div>
-            <table border={2}>
+            <table border={2} cellPadding={5}>
                 <tr>
                     <th>Member Code</th>
                     <th>Member Name</th>
@@ -28,13 +28,14 @@ const MemberList = () => {
                 </tr>
                 
                 {member.map((member) => (
-                    <tr key={member.member.id}>
-                       <td>{member.member.id}</td>
+                    <tr key={member.id}>
+                       <td>{member.id}</td>
                        <td>{member.name}</td>
                        <td>{member.email}</td>
                        <td>{member.phone}</td>
                        <td>{member.address}</td>
                        <td>{member.membership_date}</td>
+                       <td><Link to={``}></Link></td>
                     </tr>
                 ))}
             </table>
