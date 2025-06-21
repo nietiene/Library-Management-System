@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-const Add_Name = () => {
+const Add_Member = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -44,9 +44,13 @@ const Add_Name = () => {
                 <label>Membership Date</label>
                 <input type="text" name="membership_date" 
                 onChange={(e) => setMembership_date(e.target.value)}/> <br />
-
+                
+                {error && <p style={{color: 'red'}}>{error}</p>}
+                {message && <p style={{color: 'green'}}>{message}</p>}
                 <button type="submit">Create</button>
             </form>
         </div>
     )
 }
+
+export default Add_Member

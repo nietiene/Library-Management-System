@@ -16,6 +16,7 @@ const MemberList = () => {
 
     return (
         <div>
+            <Link to={`/Add_Member`}>Add New</Link>
             <table border={2} cellPadding={5}>
                 <tr>
                     <th>Member Code</th>
