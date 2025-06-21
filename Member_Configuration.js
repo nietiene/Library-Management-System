@@ -34,7 +34,7 @@ router.put('/:author_id', (req, res) => {
      connection.query(sql, [name, email, phone, address, membership_date, member_id], (err) => {
 
       if (err) {
-        res.json({error: err.message});
+        res.json({errorMessage: err.message});
       }else{
         res.json({message: "Member Updated Successfully"});
       }

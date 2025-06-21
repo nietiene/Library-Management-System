@@ -13,7 +13,7 @@ const Update_Member = () => {
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
 
-    const member_id = useParams();
+    const { member_id } = useParams();
 
     useEffect(() => {
         const handleFetchUser = () => {
@@ -22,8 +22,9 @@ const Update_Member = () => {
                 const member = res.data.member[0];
                 setName(member.name);
                 setEmail(member.email);
+                setPhone(member.phone);
                 setAddress(member.address);
-                setMembership_date(member.membership_date);
+                setMembership_date(member.membership_date.split("T")[0]);
              }).catch((err) => {
                 setError(err.data.errorMessage);
                 setTimeout(() => {
@@ -38,7 +39,7 @@ const Update_Member = () => {
     const handleUpdateMember = (e) => {
         e.preventDefault();
         axios.put(`http://localhost:3000/Update_Member/${member_id}`, {
-        name, email, address, membership_date
+        name, email, phone, address, membership_date
     })
     .then((res) => {
        setMessage(res.data.message);
@@ -79,7 +80,7 @@ return (
                 
                 {error && <p style={{color: 'red'}}>{error}</p>}
                 {message && <p style={{color: 'green'}}>{message}</p>}
-                <button type="submit">Create</button>
+                <button type="submit">Update</button>
             </form>        
     </div>
 )
