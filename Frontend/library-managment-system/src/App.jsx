@@ -10,6 +10,7 @@ import Update_Author from "./Author Configuration/Update_Author"
 import Delete_Author from "./Author Configuration/Delete_Author"
 import MemberList from "./Member Configuration/Member_List"
 import Add_Member from "./Member Configuration/Add_Member"
+import Update_Member from "./Member Configuration/Update_Member"
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
               <Route path="/Delete_Author/:author_id" element={<Delete_Author />}/>
               <Route path="/Member_List" element={<MemberList />}/>
               <Route path="/Add_member" element={<Add_Member />}/>
+              <Route path="/Update_Member" element={<Update_Author />}/>
           </Routes>
         </Router>
 

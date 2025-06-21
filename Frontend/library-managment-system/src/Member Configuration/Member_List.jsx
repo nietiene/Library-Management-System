@@ -36,8 +36,8 @@ const MemberList = () => {
                        <td>{member.phone}</td>
                        <td>{member.address}</td>
                        <td>{member.membership_date}</td>
-                       <td><Link to={`Update_Member/${member.member_id}`}>Update</Link></td>
-                       <td><Link to={`Delete_Member/${member.member_id}`}>Delete</Link></td>
+                       <td><Link to={`/Update_Member/${member.member_id}`}>Update</Link></td>
+                       <td><Link to={`/Delete_Member/${member.member_id}`}>Delete</Link></td>
                     </tr>
                 ))}
             </table>
