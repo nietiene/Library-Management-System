@@ -41,12 +41,12 @@ router.put('/:author_id', (req, res) => {
 });
 
 router.get('/:author_id', (req, res) => {
-  
+
       const { author_id } = req.params;
       const sql = "SELECT * FROM author WHERE author_id = ?";
       connection.query(sql, [author_id], (err, data) => {
         if (err) {
-            res.json({error: err.message});
+            res.json({errorMessage: err.message});
         } else {
             res.json({Author: data});
         }

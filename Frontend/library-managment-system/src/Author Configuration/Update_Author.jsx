@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 const Update_Author = () => {
@@ -7,15 +7,23 @@ const Update_Author = () => {
     const [bio, setBio] = useState("");
     const [error, setError] = useState(null);
     const {author_id} = useParams();
-
+ 
+  useEffect(() => {
+  
+    const handleFectchAuther = () => {
     axios.get(`http://localhost:3000/Get_Single_Author/${author_id}`)
     .then((res) => {
         const Author = res.data.Author[0];
         setName(Author.name);
         setBio(Author.bio);
     }).catch((err) => {
-        setError(err.data.error);
-    });
+        setError(err);
+    })
+};
+
+handleFectchAuther();
+  }, [author_id])  
+
 
     return (
         <div>
