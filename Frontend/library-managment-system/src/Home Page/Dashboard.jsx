@@ -20,7 +20,7 @@ const Dashboard = () => {
                     <Link to={`/Member_List`}>Members List</Link>
                     <Link to={`#`}>Logout</Link>
              </nav>
-            <h2>Welcome to our Dashboard</h2>
+            <h2>Welcome {user.username} to our Dashboard</h2>
         </div>
     )
 }
