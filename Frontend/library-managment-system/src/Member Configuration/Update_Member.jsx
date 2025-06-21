@@ -25,7 +25,7 @@ const Update_Member = () => {
                 setAddress(member.address);
                 setMembership_date(member.membership_date);
              }).catch((err) => {
-                setError(err.data.error);
+                setError(err.data.errorMessage);
                 setTimeout(() => {
                     setError(null);
                 }, 3000);
@@ -43,8 +43,8 @@ const Update_Member = () => {
     .then((res) => {
        setMessage(res.data.message);
        navigate('/Member_List');
-    }).catch(() => {
-        setError("Member Not updated");
+    }).catch((err) => {
+        setError(err.data.errorMessage);
     })
     }
 
