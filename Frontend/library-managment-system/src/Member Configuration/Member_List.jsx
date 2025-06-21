@@ -28,14 +28,15 @@ const MemberList = () => {
                 </tr>
                 
                 {member.map((member) => (
-                    <tr key={member.id}>
-                       <td>{member.id}</td>
+                    <tr key={member.member_id}>
+                       <td>{member.member_id}</td>
                        <td>{member.name}</td>
                        <td>{member.email}</td>
                        <td>{member.phone}</td>
                        <td>{member.address}</td>
                        <td>{member.membership_date}</td>
-                       <td><Link to={``}></Link></td>
+                       <td><Link to={`Update_Member/${member.member_id}`}>Update</Link></td>
+                       <td><Link to={`Delete_Member/${member.member_id}`}>Delete</Link></td>
                     </tr>
                 ))}
             </table>
