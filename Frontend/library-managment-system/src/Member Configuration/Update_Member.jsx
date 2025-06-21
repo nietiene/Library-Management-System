@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Update_Member = () => {
 
@@ -11,6 +11,7 @@ const Update_Member = () => {
     const [membership_date, setMembership_date] = useState("");
     const [error, setError] = useState(null);
     const [message, setMessage] = useState("");
+    const navigate = useNavigate();
 
     const member_id = useParams();
 
@@ -21,7 +22,6 @@ const Update_Member = () => {
                 const member = res.data.member[0];
                 setName(member.name);
                 setEmail(member.email);
-                setAddress(member.address);
                 setAddress(member.address);
                 setMembership_date(member.membership_date);
              }).catch((err) => {
@@ -37,7 +37,15 @@ const Update_Member = () => {
 
     const handleUpdateMember = (e) => {
         e.preventDefault();
-        
+        axios.put(`http://localhost:3000/Update_Member/${member_id}`, {
+        name, email, address, membership_date
+    })
+    .then((res) => {
+       setMessage(res.data.message);
+       navigate('/Member_List');
+    }).catch(() => {
+        setError("Member Not updated");
+    })
     }
 
 
