@@ -5,6 +5,7 @@ const session = require("express-session");
 const Book_Configuration = require("./Book_Configuration");
 const Author_Configuration = require("./Author_Configuration");
 const Member_Configuration = require('./Member_Configuration');
+const Login = require("./login");
 
 require("dotenv").config();
 
@@ -43,6 +44,7 @@ app.use('/Member_List', Member_Configuration);
 app.use('/Update_Member', Member_Configuration);
 app.use('/Get_Single_Member', Member_Configuration);
 app.use('/Delete_Member', Member_Configuration);
+app.use("/auth", Login);
 
 const PORT = process.env.PORT;
 
