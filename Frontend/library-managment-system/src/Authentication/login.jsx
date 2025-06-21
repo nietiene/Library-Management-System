@@ -12,11 +12,12 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         axios.post(`http://localhost:3000/auth/login`, {
-            username, password }, {withCredentials: true}).then ((res) => {
+            username, password }, {withCredentials: true})
+            .then ((res) => {
             if (res.data.user) {
                  navigate("/Dashboard");
             } else {
-                setMessage(res.data.message);
+                setMessage(res.data.error);
             }
         }).catch ((err) => {
           setError(err.data.error);
