@@ -26,33 +26,33 @@ router.get('/', (req, res) => {
       }) 
 });
 
-// router.put('/:author_id', (req, res) => {
-//      const { author_id } = req.params;
-//      const { name, bio } = req.body;
+router.put('/:author_id', (req, res) => {
+     const { member_id } = req.params;
+     const { name, email, phone, address, membership_date } = req.body;
 
-//      const sql = "UPDATE author SET name = ? , bio = ? WHERE author_id = ?";
-//      connection.query(sql, [name, bio, author_id], (err) => {
+     const sql = "UPDATE member SET name = ? , email = ?, phone = ?, address = ?, membership_date = ? WHERE member_id = ?";
+     connection.query(sql, [name, email, phone, address, membership_date, member_id], (err) => {
 
-//       if (err) {
-//         res.json({error: err.message});
-//       }else{
-//         res.json({message: "Author Updated Successfully"});
-//       }
-//      });
-// });
+      if (err) {
+        res.json({error: err.message});
+      }else{
+        res.json({message: "Member Updated Successfully"});
+      }
+     });
+});
 
-// router.get('/:author_id', (req, res) => {
+router.get('/:member_id', (req, res) => {
 
-//       const { author_id } = req.params;
-//       const sql = "SELECT * FROM author WHERE author_id = ?";
-//       connection.query(sql, [author_id], (err, data) => {
-//         if (err) {
-//             res.json({errorMessage: err.message});
-//         } else {
-//             res.json({Author: data});
-//         }
-//       }) 
-// });
+      const { member_id } = req.params;
+      const sql = "SELECT * FROM member WHERE member_id = ?";
+      connection.query(sql, [member_id], (err, data) => {
+        if (err) {
+            res.json({errorMessage: err.message});
+        } else {
+            res.json({member: data});
+        }
+      }) 
+});
 
 // router.delete('/:author_id', (req, res) => {
 
