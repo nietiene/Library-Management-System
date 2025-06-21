@@ -14,8 +14,8 @@ const Add_Name = () => {
         axios.post(`http://localhost:3000/Add_member`, {
             name, email, phone, address, membership_date
         })
-        .then(() => {
-
+        .then((res) => {
+           setMessage(res.data.message);
         })
     }
 }
