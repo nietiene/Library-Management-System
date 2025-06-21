@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 const Update_Author = () => {
-    const {name, setName} = useState("");
+    const [name, setName] = useState("");
     const [bio, setBio] = useState("");
-    const [error, setError] = useState(null);
     const {author_id} = useParams();
  
   useEffect(() => {
@@ -17,18 +16,24 @@ const Update_Author = () => {
         setName(Author.name);
         setBio(Author.bio);
     }).catch((err) => {
-        setError(err);
+       console.log("Error:", err);
     })
 };
 
 handleFectchAuther();
   }, [author_id])  
 
+  const handleUpdateLogic = (e) => {
+    e.preventDefault();
+    
+
+  }
 
     return (
         <div>
+            <h1>Update Author</h1>
             <form>
-                {error && <p style={{color: 'red'}}>{error}</p>}
+                {/* {error && <p style={{color: 'red'}}>{error}</p>} */}
                 <label>Name</label>
                 <input type="text" name="name" 
                 onChange={(e) => setName(e.target.value)}
