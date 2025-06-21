@@ -10,15 +10,23 @@ const Add_Member = () => {
     const [message, setMessage]  = useState("");
     const [error, setError] = useState(null);
 
-    const handleAddMember = () => {
+    const handleAddMember = (e) => {
+        e.preventDefault();
+
         axios.post(`http://localhost:3000/Add_member`, {
             name, email, phone, address, membership_date
         })
         .then((res) => {
            setMessage(res.data.message);
+           setTimeout(() => {
+            setMessage("");
+           }, 3000);
+           
+           setError(null);
         })
         .catch((err) => {
             setError(err.data.error);
+            setMessage("");
         });
     }
 
@@ -42,7 +50,7 @@ const Add_Member = () => {
                 onChange={(e) => setAddress(e.target.value)}/> <br />
 
                 <label>Membership Date</label>
-                <input type="text" name="membership_date" 
+                <input type="date" name="membership_date" 
                 onChange={(e) => setMembership_date(e.target.value)}/> <br />
                 
                 {error && <p style={{color: 'red'}}>{error}</p>}
