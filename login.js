@@ -19,6 +19,14 @@
                 res.json({error: "Invalid credentials"})
             }
         })
-    })
+    });
+
+    router.get('/user', (req, res) => {
+        if (req.session.user) {
+            res.json({user: req.session.user})
+        } else {
+            res.json({error: "Not logged In"});
+        }
+    });
 
     module.exports = router;
