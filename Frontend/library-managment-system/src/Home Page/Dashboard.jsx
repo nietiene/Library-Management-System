@@ -5,16 +5,12 @@ const Dashboard = () => {
     
     const [user, setUser] = useState([]);
     const[message, setMessage] = useState("");
-    
+
     axios.get(`http://localhost:3000/data/user`, {withCredentials: true})
             .then ((res) => {
-            if (res.data.user) {
-                 navigate("/Dashboard");
-            } else {
-                setMessage(res.data.error);
-            }
+              setUser(res.data.user);
         }).catch ((err) => {
-          setError(err.data.error);
+          setMessage(err.data.error);
         });
     return (
         <div>
