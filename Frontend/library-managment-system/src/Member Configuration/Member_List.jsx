@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const UserList = () => {
+const MemberList = () => {
     const [member, setMember] = useState("");
 
     useEffect(() => {
@@ -28,11 +28,18 @@ const UserList = () => {
                 </tr>
                 
                 {member.map((member) => (
-                    <tr>
-                        
+                    <tr key={member.member.id}>
+                       <td>{member.member.id}</td>
+                       <td>{member.name}</td>
+                       <td>{member.email}</td>
+                       <td>{member.phone}</td>
+                       <td>{member.address}</td>
+                       <td>{member.membership_date}</td>
                     </tr>
                 ))}
             </table>
         </div>
     )
 }
+
+export default MemberList
