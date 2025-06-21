@@ -28,7 +28,7 @@ function App() {
               <Route path="/Delete_Author/:author_id" element={<Delete_Author />}/>
               <Route path="/Member_List" element={<MemberList />}/>
               <Route path="/Add_member" element={<Add_Member />}/>
-              <Route path="/Update_Member" element={<Update_Author />}/>
+              <Route path="/Update_Member/:member_id" element={<Update_Member />}/>
           </Routes>
         </Router>
 
