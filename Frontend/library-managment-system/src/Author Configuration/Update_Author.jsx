@@ -8,7 +8,7 @@ const Update_Author = () => {
     const [error, setError] = useState(null);
     const {author_id} = useParams();
 
-    axios.get(`http://localhost:3000/Author_List/${author_id}`)
+    axios.get(`http://localhost:3000/Get_Single_Author/${author_id}`)
     .then((res) => {
         const Author = res.data.Author[0];
         setName(Author.name);
@@ -36,3 +36,5 @@ const Update_Author = () => {
         </div>
     )
 }
+
+export default Update_Author;

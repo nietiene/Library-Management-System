@@ -27,6 +27,7 @@ app.use('/Get_Sigle_Book', Book_Configuration);
 app.use('/Add_Author', Author_Configuration);
 app.use('/Author_List', Author_Configuration);
 app.use('/Update_Author', Author_Configuration);
+app.use('/Get_Single_Author', Author_Configuration);
 
 const PORT = process.env.PORT;
 
