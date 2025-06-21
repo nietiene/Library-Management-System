@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 const Update_Author = () => {
     const [name, setName] = useState("");
     const [bio, setBio] = useState("");
+    const [message, setMessage] = useState("");
     const {author_id} = useParams();
- 
+    const navigate = useNavigate();
+
   useEffect(() => {
   
     const handleFectchAuther = () => {
@@ -25,14 +27,20 @@ handleFectchAuther();
 
   const handleUpdateLogic = (e) => {
     e.preventDefault();
-    
+    axios.put(`http://localhost:3000/Update_Author/${author_id}`, {name, bio})
+    .then((res) => {
+        setMessage(res.data.message);
+        navigate('/Author_List');
 
+    }).catch((err) => {
+        console.log(err);
+    })
   }
 
     return (
         <div>
             <h1>Update Author</h1>
-            <form>
+            <form onSubmit={handleUpdateLogic}>
                 {/* {error && <p style={{color: 'red'}}>{error}</p>} */}
                 <label>Name</label>
                 <input type="text" name="name" 
