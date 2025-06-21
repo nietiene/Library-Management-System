@@ -47,19 +47,23 @@ return (
 
                 <label>Email</label>
                 <input type="email" name="email" 
-                onChange={(e) => setEmail(e.target.value)}/> <br />
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}/> <br />
 
                 <label>Phone Number</label>
                 <input type="text" name="phone" 
-                onChange={(e) => setPhone(e.target.value)}/> <br />
+                onChange={(e) => setPhone(e.target.value)}
+                value={phone}/> <br />
 
                 <label>Address</label>
                 <input type="text" name="address" 
-                onChange={(e) => setAddress(e.target.value)}/> <br />
+                onChange={(e) => setAddress(e.target.value)}
+                value={address}/> <br />
 
                 <label>Membership Date</label>
                 <input type="date" name="membership_date" 
-                onChange={(e) => setMembership_date(e.target.value)}/> <br />
+                onChange={(e) => setMembership_date(e.target.value)}
+                value={membership_date}/> <br />
                 
                 {error && <p style={{color: 'red'}}>{error}</p>}
                 {message && <p style={{color: 'green'}}>{message}</p>}
