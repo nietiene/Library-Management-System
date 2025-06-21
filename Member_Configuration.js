@@ -15,16 +15,16 @@ router.post('/', (req, res) => {
       }) 
 });
 
-// router.get('/', (req, res) => {
-//       const sql = "SELECT * FROM author";
-//       connection.query(sql, (err, data) => {
-//         if (err) {
-//             res.json({error: err.message});
-//         } else {
-//             res.json({Author: data});
-//         }
-//       }) 
-// });
+router.get('/', (req, res) => {
+      const sql = "SELECT * FROM member";
+      connection.query(sql, (err, data) => {
+        if (err) {
+            res.json({error: err.message});
+        } else {
+            res.json({Member: data});
+        }
+      }) 
+});
 
 // router.put('/:author_id', (req, res) => {
 //      const { author_id } = req.params;
