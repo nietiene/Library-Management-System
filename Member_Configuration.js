@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
       }) 
 });
 
-router.put('/:author_id', (req, res) => {
+router.put('/:member_id', (req, res) => {
      const { member_id } = req.params;
      const { name, email, phone, address, membership_date } = req.body;
 
