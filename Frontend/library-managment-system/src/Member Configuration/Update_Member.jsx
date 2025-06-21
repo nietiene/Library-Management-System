@@ -35,6 +35,10 @@ const Update_Member = () => {
         handleFetchUser();
     }, [member_id]);
 
+    const handleUpdateMember = (e) => {
+        e.preventDefault();
+        
+    }
 
 
 return (
