@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const MemberList = () => {
-    const [member, setMember] = useState("");
+    const [member, setMember] = useState([]);
 
     useEffect(() => {
         axios.get(`http://localhost:3000/Member_List`)
