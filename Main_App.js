@@ -3,6 +3,7 @@ const cors = require("cors");
 const express = require("express");
 const Book_Configuration = require("./Book_Configuration");
 const Author_Configuration = require("./Author_Configuration");
+const Member_Configuration = require('./Member_Configuration');
 
 require("dotenv").config();
 
@@ -29,6 +30,7 @@ app.use('/Author_List', Author_Configuration);
 app.use('/Update_Author', Author_Configuration);
 app.use('/Get_Single_Author', Author_Configuration);
 app.use('/Delete_Author', Author_Configuration);
+app.use('/Add_Member', Member_Configuration);
 
 const PORT = process.env.PORT;
 
