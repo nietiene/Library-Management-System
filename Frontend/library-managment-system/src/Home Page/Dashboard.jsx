@@ -21,6 +21,7 @@ const Dashboard = () => {
                     <Link to={`#`}>Logout</Link>
              </nav>
             <h2>Welcome {user.username} to our Dashboard</h2>
+            {message && <p>{message}</p>}
         </div>
     )
 }
