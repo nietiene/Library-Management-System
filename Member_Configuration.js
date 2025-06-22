@@ -17,8 +17,25 @@ router.post('/', (req, res) => {
 
 
 router.post('/Auth', (req, res) => {
-  
-})
+  const {name, email} = req.body;
+  const sql = "SELECT * FROM member WHERE name = ? AND email = ?";
+  connection.query(sql, [ name, email ], (err, data) => {
+    if (err) {
+      res.json({error: err.message});
+
+    } if (data.length > 0) {
+         req.session.memberInfo = {
+            member_id: data[0].member_id,
+            name: data[0].name
+         }
+         req.json({message: "Login Successfully", memberInfo: memberInfo.name});
+    } else {
+      res.json({error: "Invalid Credentials"});
+    }
+  });
+});
+
+
 router.get('/', (req, res) => {
       const sql = "SELECT * FROM member";
       connection.query(sql, (err, data) => {
