@@ -40,7 +40,7 @@ const Login = () => {
                  onChange={(e) => setPassword(e.target.value)}
                 /> <br />
 
-                <button type="submit">Login</button>
+                <button type="submit" className="bg-gray-700 mt-5 w-[50%] py-2 rounded-lg text-white hover:bg-gray-600 transition duration-300 mb-3">Login</button>
                 {error && <p style={{color: 'red'}}>{error}</p>}
                 {message && <p style={{color: 'red'}}>{message}</p>}
             </form>
