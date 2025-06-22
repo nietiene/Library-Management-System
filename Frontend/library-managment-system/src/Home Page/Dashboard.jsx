@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Dashboard = () => {
     
-    const [user, setUser] = useState([]);
+    const [user, setUser] = useState({});
     const[message, setMessage] = useState("");
     const navigate = useNavigate();
 
@@ -39,7 +39,8 @@ const Dashboard = () => {
                     <Link to={`/Member_List`} className="hover:text-yellow-400 hover:underline transition duration-200">Members List</Link>
                 </nav>
                 <div>
-                   <button onClick={handleLogout} className="bg-red-500 px-4 py-1 rounded hover:bg-red-600 transition duration-200">Logout</button>
+                   <button onClick={handleLogout}
+                    className="bg-red-500 px-4 py-1 rounded hover:bg-red-600 transition duration-200">Logout</button>
                 </div>
 
              </header>
