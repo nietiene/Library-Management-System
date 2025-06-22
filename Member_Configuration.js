@@ -28,7 +28,7 @@ router.post('/Auth', (req, res) => {
             member_id: data[0].member_id,
             name: data[0].name
          }
-         req.json({message: "Login Successfully", memberInfo: memberInfo.name});
+         res.json({message: "Login Successfully", memberInfo: req.session.memberInfo.name});
     } else {
       res.json({error: "Invalid Credentials"});
     }
