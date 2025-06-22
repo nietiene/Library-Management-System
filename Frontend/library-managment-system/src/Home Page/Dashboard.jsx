@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import axios from "axios";
 
 const Dashboard = () => {
     
     const [user, setUser] = useState([]);
     const[message, setMessage] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
        axios.get(`http://localhost:3000/data/user`, {withCredentials: true})
@@ -16,6 +17,21 @@ const Dashboard = () => {
         });
     }, [])
 
+    const handleLogout = () => {
+       const [message, setMessage] = useState("");
+         axios.get(`http://localhost:3000/auth/logout`, {withCredentials: true})
+            .then (() => {
+                 navigate("/login");
+ 
+        }).catch ((err) => {
+          setMessage(err.data.error);
+        });
+
+        if ( message ) return <p style={{color: 'red'}}>{message}</p>
+    }
+
+    
+
     return (
         <div className="bg-gray-800 min-h-screen text-white font-sans">
             <header className="flex justify-between bg-gray-700 p-4 shadow-md">
@@ -25,7 +41,7 @@ const Dashboard = () => {
                     <Link to={`/Member_List`} className="hover:text-yellow-400 hover:underline transition duration-200">Members List</Link>
                 </nav>
                 <div>
-                   <Link to={`#`} className="bg-red-500 px-4 py-1 rounded hover:bg-red-600 transition duration-200">Logout</Link>
+                   <Link to={handleLogout} className="bg-red-500 px-4 py-1 rounded hover:bg-red-600 transition duration-200">Logout</Link>
                 </div>
 
              </header>
