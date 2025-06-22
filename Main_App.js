@@ -6,6 +6,7 @@ const Book_Configuration = require("./Book_Configuration");
 const Author_Configuration = require("./Author_Configuration");
 const Member_Configuration = require('./Member_Configuration');
 const Login = require("./login");
+const logout = require("./logout");
 
 require("dotenv").config();
 
@@ -47,6 +48,7 @@ app.use('/Get_Single_Member', Member_Configuration);
 app.use('/Delete_Member', Member_Configuration);
 app.use("/auth", Login);
 app.use("/data", Login);
+app.use("/auth", logout);
 
 const PORT = process.env.PORT;
 

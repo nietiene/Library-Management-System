@@ -1,7 +1,7 @@
     const express = require("express");
     const router = express.Router();
 
-    router.get('/login', (req, res) => {
+    router.get('/logout', (req, res) => {
         req.session.destroy((err) => {
             if (err) {
                 res.json({error: "Logout Failed Try again"});
