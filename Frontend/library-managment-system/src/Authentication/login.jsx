@@ -25,8 +25,10 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleLogin}>
+        <div className="bg-gray-700 min-h-screen flex  justify-center items-center">
+            <div className="bg-gray-500 max-w-md p-4 shadow-2xl rounded-xl">
+            <form onSubmit={handleLogin} className="p-5">
+                <h1 className="text-xl text-center font-bold">Login To Library Managment System</h1>
                 <label>Username</label>
                 <input type="text" name="username" 
                   onChange={(e) => setUsername(e.target.value)}/> <br />
@@ -40,6 +42,7 @@ const Login = () => {
                 {error && <p style={{color: 'red'}}>{error}</p>}
                 {message && <p style={{color: 'red'}}>{message}</p>}
             </form>
+            </div>
         </div>
     )
 }
