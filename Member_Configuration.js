@@ -23,10 +23,12 @@ router.post('/Auth', (req, res) => {
   email = email.trim().toLowerCase()
   const sql = "SELECT * FROM member WHERE LOWER(TRIM(name)) = ? AND LOWER(TRIM(email)) = ?";
   connection.query(sql, [ name, email ], (err, data) => {
+  
     if (err) {
       res.json({error: err.message});
 
     } if (data.length > 0) {
+ 
          req.session.memberInfo = {
             member_id: data[0].member_id,
             name: data[0].name
