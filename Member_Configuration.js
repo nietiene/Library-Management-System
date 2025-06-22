@@ -16,9 +16,12 @@ router.post('/', (req, res) => {
 });
 
 
+//Login
 router.post('/Auth', (req, res) => {
-  const {name, email} = req.body;
-  const sql = "SELECT * FROM member WHERE name = ? AND email = ?";
+  let {name, email} = req.body;
+  name = name.trim().toLowerCase()
+  email = email.trim().toLowerCase()
+  const sql = "SELECT * FROM member WHERE LOWER(TRIM(name)) = ? AND LOWER(TRIM(email)) = ?";
   connection.query(sql, [ name, email ], (err, data) => {
     if (err) {
       res.json({error: err.message});
@@ -32,6 +35,7 @@ router.post('/Auth', (req, res) => {
     } else {
       res.json({error: "Invalid Credentials"});
     }
+
   });
 });
 
