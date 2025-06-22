@@ -18,7 +18,6 @@ const Dashboard = () => {
     }, [])
 
     const handleLogout = () => {
-       const [message, setMessage] = useState("");
          axios.get(`http://localhost:3000/auth/logout`, {withCredentials: true})
             .then (() => {
                  navigate("/login");
@@ -27,7 +26,6 @@ const Dashboard = () => {
           setMessage(err.data.error);
         });
 
-        if ( message ) return <p style={{color: 'red'}}>{message}</p>
     }
 
     
