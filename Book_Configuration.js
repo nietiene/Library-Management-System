@@ -72,8 +72,9 @@ router.get('/Book_List', (req, res) => {
     const sql = "SELECT * FROM book WHERE copies_available > 0";
     connection.query(sql, (err, data) => {
         if (err) {
-            throw err;
+            res.json({error: err.message});
         } else {
+            console.log("Book returned:", data);
             res.json({books: data});
         }
     })

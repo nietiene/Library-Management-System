@@ -51,6 +51,7 @@ app.use("/data", Login);
 app.use("/auth", logout);
 app.use("/member", Member_Configuration);
 app.use("/member/data", Member_Configuration);
+app.use('/available_books', Book_Configuration);
 
 const PORT = process.env.PORT;
 
