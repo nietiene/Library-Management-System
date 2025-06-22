@@ -4,16 +4,18 @@ const navigate = useNavigate();
 
 const handleLogout = () => {
 
-     axios.post(`http://localhost:3000/auth/logout`, {
-            username, password }, {withCredentials: true})
-            .then ((res) => {
-            if (res.data.user) {
-                 navigate("/Dashboard");
-            } else {
-                setMessage(res.data.error);
-            }
+    const [message, setMessage] = useState("");
+     axios.get(`http://localhost:3000/auth/logout`, {withCredentials: true})
+            .then (() => {
+                 navigate("/login");
+ 
         }).catch ((err) => {
-          setError(err.data.error);
+          setMessage(err.data.error);
         });
+
+        if ( message ) return <p style={{color: 'red'}}>{message}</p>
     }
+
     
+
+export default handleLogout;
