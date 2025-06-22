@@ -75,7 +75,7 @@ router.get('/Available_books', (req, res) => {
             res.json({error: err.message});
         } else {
             console.log("Book returned:", data);
-            res.json({books: data});
+            res.json(data);
         }
     })
 })

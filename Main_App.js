@@ -36,6 +36,7 @@ app.use('/Add_New_Book', Book_Configuration); // add new book
 app.use('/Update_Book', Book_Configuration);
 app.use('/Delete_Book', Book_Configuration);
 app.use('/Get_Sigle_Book', Book_Configuration);
+app.use('/books', Book_Configuration); // available books
 app.use('/Add_Author', Author_Configuration);
 app.use('/Author_List', Author_Configuration);
 app.use('/Update_Author', Author_Configuration);
@@ -51,7 +52,7 @@ app.use("/data", Login);
 app.use("/auth", logout);
 app.use("/member", Member_Configuration);
 app.use("/member/data", Member_Configuration);
-app.use('/books', Book_Configuration);
+
 
 const PORT = process.env.PORT;
 
