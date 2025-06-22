@@ -13,6 +13,7 @@ import Add_Member from "./Member Configuration/Add_Member"
 import Update_Member from "./Member Configuration/Update_Member"
 import Delete_Member from "./Member Configuration/Delete_Member"
 import Login from "./Authentication/login"
+import MemberLogin from "./Authentication/MemberAuth"
 function App() {
 
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path="/Update_Member/:member_id" element={<Update_Member />}/>
               <Route path="/Delete_Member/:member_id" element={<Delete_Member />}/>
               <Route path="/Login" element={<Login />}/>
+              <Route path="/MemberAuth" element={<MemberLogin />}/>
           </Routes>
         </Router>
 
