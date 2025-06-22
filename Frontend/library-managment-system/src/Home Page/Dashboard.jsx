@@ -18,13 +18,16 @@ const Dashboard = () => {
 
     return (
         <div className="bg-gray-800 min-h-screen text-white font-sans">
-            <header className="flex justify-center bg-gray-700 p-4 shadow-md">
+            <header className="flex justify-between bg-gray-700 p-4 shadow-md">
                 <nav className="flex gap-6 tex-lg font-medium">
-                    <Link to={`/Book_list`}>Books List</Link>
-                    <Link to={`/Author_List`}>Authors List</Link>
-                    <Link to={`/Member_List`}>Members List</Link>
-                    <Link to={`#`}>Logout</Link>
+                    <Link to={`/Book_list`} className="hover:text-yellow-400 hover:underline transition duration-200">Books List</Link>
+                    <Link to={`/Author_List`} className="hover:text-yellow-400 hover:underline transition duration-200">Authors List</Link>
+                    <Link to={`/Member_List`} className="hover:text-yellow-400 hover:underline transition duration-200">Members List</Link>
                 </nav>
+                <div>
+                   <Link to={`#`} className="bg-red-500 px-4 py-1 rounded hover:bg-red-600 transition duration-200">Logout</Link>
+                </div>
+
              </header>
              <main className="flex justify-center items-center mt-16 px-4">
                 <div className="bg-gray-900 p-8 text-center rounded-lg shadow-2xl w-full max-w-xl">
