@@ -68,9 +68,15 @@ router.get('/', (req, res) => {
 
 
 // Available Books
-
 router.get('/Book_List', (req, res) => {
-    const sql = "SELECT * FROM book WHERE c"
+    const sql = "SELECT * FROM book WHERE copies_available > 0";
+    connection.query(sql, (err, data) => {
+        if (err) {
+            throw err;
+        } else {
+            res.json({books: data});
+        }
+    })
 })
 
 module.exports = router;
