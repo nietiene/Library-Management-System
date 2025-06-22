@@ -1,8 +1,16 @@
+import axios from "axios";
+import { useEffect, useState } from "react"
 
 const MemberDasboard = () => {
+
+    const [member, setMember] = useState([]);
+    
+    useEffect(() => {
+        axios.get(``)
+    })
     return (
         <div>
-            <h2>Welcome to member dashboars</h2>
+            <h2>Welcome to member dashboard</h2>
         </div>
     )
 }

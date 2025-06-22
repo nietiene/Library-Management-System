@@ -50,6 +50,7 @@ app.use("/auth", Login);
 app.use("/data", Login);
 app.use("/auth", logout);
 app.use("/member", Member_Configuration);
+app.use("/data", Member_Configuration);
 
 const PORT = process.env.PORT;
 

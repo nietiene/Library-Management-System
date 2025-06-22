@@ -35,7 +35,7 @@ function App() {
               <Route path="/Delete_Member/:member_id" element={<Delete_Member />}/>
               <Route path="/Login" element={<Login />}/>
               <Route path="/MemberAuth" element={<MemberLogin />}/>
-              <Route path="MemberDasboard" element={<MemberDasboard />}/>
+              <Route path="/MemberDashboard" element={<MemberDasboard />}/>
           </Routes>
         </Router>
 

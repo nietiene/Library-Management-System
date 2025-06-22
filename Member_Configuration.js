@@ -40,6 +40,13 @@ router.post('/Auth', (req, res) => {
 });
 
 
+    router.get('/user', (req, res) => {
+        if (req.session.memberInfo) {
+            res.json({user: req.session.memberInfo})
+        } else {
+            res.json({error: "Not logged In"});
+        }
+    });
 router.get('/', (req, res) => {
       const sql = "SELECT * FROM member";
       connection.query(sql, (err, data) => {
