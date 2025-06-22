@@ -66,4 +66,11 @@ router.get('/', (req, res) => {
       });
 });
 
+
+// Available Books
+
+router.get('/Book_List', (req, res) => {
+    const sql = "SELECT * FROM book WHERE c"
+})
+
 module.exports = router;

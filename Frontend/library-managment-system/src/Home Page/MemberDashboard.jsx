@@ -18,7 +18,16 @@ const MemberDasboard = () => {
     return (
         <div>
             {member ? (
-               <h2>Welcome {member.name} to member dashboard</h2>
+                <>
+                  <h2>Welcome {member.name} to member dashboard</h2>
+      
+                  <label>Search Book</label>
+                  <input type="search" name="" />
+                  
+                  <h3>Available Books</h3>
+                  
+                </>
+
             ) : (
                 <>
                 <h2>Loading......</h2>
