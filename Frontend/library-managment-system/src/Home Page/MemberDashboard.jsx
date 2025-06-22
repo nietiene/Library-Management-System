@@ -6,11 +6,16 @@ const MemberDasboard = () => {
     const [member, setMember] = useState([]);
     
     useEffect(() => {
-        axios.get(``)
+        axios.get(`http://localhost:3000/data/user`, {withCredentials: true})
+        .then((res) => {
+            setMember(res.data.memberInfo);
+        }).catch((err) => {
+            console.log(err);
+        })
     })
     return (
         <div>
-            <h2>Welcome to member dashboard</h2>
+            <h2>Welcome {member.name} to member dashboard</h2>
         </div>
     )
 }

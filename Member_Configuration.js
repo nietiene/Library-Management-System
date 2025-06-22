@@ -39,10 +39,9 @@ router.post('/Auth', (req, res) => {
   });
 });
 
-
-    router.get('/user', (req, res) => {
+ router.get('/user', (req, res) => {
         if (req.session.memberInfo) {
-            res.json({user: req.session.memberInfo})
+            res.json({memberInfo: req.session.memberInfo})
         } else {
             res.json({error: "Not logged In"});
         }
