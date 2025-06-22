@@ -28,12 +28,13 @@ const Login = () => {
         <div className="bg-gray-700 min-h-screen flex  justify-center items-center">
             <div className="bg-gray-500 max-w-md p-4 shadow-2xl rounded-xl">
             <form onSubmit={handleLogin} className="p-5">
-                <h1 className="text-xl text-center font-bold">Login To Library Managment System</h1>
-                <label>Username</label>
-                <input type="text" name="username" 
+                <h1 className="text-xl text-center font-bold text-gray-800 mb-5">Login to Library Managment System</h1>
+                <label className="block text-md text-gray-800 font-bold mb-3">Username</label>
+                <input type="text" name="username"
+                  className="w-full py-2 rounded" 
                   onChange={(e) => setUsername(e.target.value)}/> <br />
 
-                <label>Password</label>
+                <label className="block">Password</label>
                 <input type="password" name="password" 
                  onChange={(e) => setPassword(e.target.value)}
                 /> <br />
