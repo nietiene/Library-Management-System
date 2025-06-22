@@ -31,11 +31,12 @@ const Login = () => {
                 <h1 className="text-xl text-center font-bold text-gray-800 mb-5">Login to Library Managment System</h1>
                 <label className="block text-md text-gray-800 font-bold mb-3">Username</label>
                 <input type="text" name="username"
-                  className="w-full py-2 rounded" 
+                  className="w-full py-2 rounded bg-gray-300 focus:ring-2 focus:ring-gray-600 focus:outline-gray-700 rounded-lg" 
                   onChange={(e) => setUsername(e.target.value)}/> <br />
 
-                <label className="block">Password</label>
+                <label className="block text-md text-gray-800 font-bold mb-3">Password</label>
                 <input type="password" name="password" 
+                className="w-full py-2 rounded bg-gray-300 focus:ring-2 focus:ring-gray-600 focus:outline-gray-700 rounded-lg"
                  onChange={(e) => setPassword(e.target.value)}
                 /> <br />
 
