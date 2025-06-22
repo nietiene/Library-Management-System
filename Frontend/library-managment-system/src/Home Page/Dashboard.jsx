@@ -39,7 +39,7 @@ const Dashboard = () => {
                     <Link to={`/Member_List`} className="hover:text-yellow-400 hover:underline transition duration-200">Members List</Link>
                 </nav>
                 <div>
-                   <Link to={handleLogout} className="bg-red-500 px-4 py-1 rounded hover:bg-red-600 transition duration-200">Logout</Link>
+                   <button onClick={handleLogout} className="bg-red-500 px-4 py-1 rounded hover:bg-red-600 transition duration-200">Logout</button>
                 </div>
 
              </header>
