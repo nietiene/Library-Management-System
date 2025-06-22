@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 const MemberDasboard = () => {
 
-    const [member, setMember] = useState([]);
+    const [member, setMember] = useState(null);
     
     useEffect(() => {
         axios.get(`http://localhost:3000/data/user`, {withCredentials: true})
