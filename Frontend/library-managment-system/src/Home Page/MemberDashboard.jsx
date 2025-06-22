@@ -8,15 +8,23 @@ const MemberDasboard = () => {
     useEffect(() => {
         axios.get(`http://localhost:3000/member/data/user`, {withCredentials: true})
         .then((res) => {
+            console.log("Response:", res.data);
             setMember(res.data.memberInfo);
         }).catch((err) => {
             console.log(err);
         })
     }, [])
-    
+
     return (
         <div>
-            <h2>Welcome {member.name} to member dashboard</h2>
+            {member ? (
+               <h2>Welcome {member.name} to member dashboard</h2>
+            ) : (
+                <>
+                <h2>Loading......</h2>
+                </>
+            )}
+
         </div>
     )
 }
