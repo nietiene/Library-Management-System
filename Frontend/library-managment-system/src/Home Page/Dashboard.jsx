@@ -26,9 +26,12 @@ const Dashboard = () => {
                     <Link to={`#`}>Logout</Link>
                 </nav>
              </div>
-             <div>
-                   <h2 className="">Welcome {user.username} to our Dashboard</h2>
-                   {message && <p style={{color: 'red'}}>{message}</p>}
+             <div className="bg-gray-900 mt-9 flex justify-center items-center w-[50%]">
+                <div className=" p-6 ">
+                     <h2 className="text-white">Welcome {user.username} to our Dashboard</h2>
+                     {message && <p style={{color: 'red'}}>{message}</p>}
+                </div>
+
              </div>
 
         </div>
