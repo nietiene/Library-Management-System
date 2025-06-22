@@ -15,6 +15,10 @@ router.post('/', (req, res) => {
       }) 
 });
 
+
+router.post('/Auth', (req, res) => {
+  
+})
 router.get('/', (req, res) => {
       const sql = "SELECT * FROM member";
       connection.query(sql, (err, data) => {

@@ -41,6 +41,8 @@ const Login = () => {
                 /> <br />
 
                 <button type="submit" className="bg-gray-700 mt-5 w-[50%] py-2 rounded-lg text-white hover:bg-gray-600 transition duration-300 mb-3">Login</button>
+                <p className="font-bold text-gray-800">You are not Admin ?</p>
+                <Link to={`/MemberAuth`} className="text-blue-800 font-bold hover:underline">Login as Member</Link>
                 {error && <p style={{color: 'red'}}>{error}</p>}
                 {message && <p style={{color: 'red'}}>{message}</p>}
             </form>
