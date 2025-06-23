@@ -9,7 +9,6 @@ const MemberDasboard = () => {
     useEffect(() => {
         axios.get(`http://localhost:3000/member/data/user`, {withCredentials: true})
         .then((res) => {
-            console.log("Response:", res.data);
             setMember(res.data.memberInfo);
         }).catch((err) => {
             console.log(err);
@@ -17,13 +16,15 @@ const MemberDasboard = () => {
     }, []);
 
     // Available Books
-
+useEffect(() => {
     axios.get(`http://localhost:3000/books/Book_List/available`, {withCredentials: true})
     .then((res) => {
         setBook(res.data.books);
     }).catch((err) => {
         console.log(err);
     });
+}, [])
+
 
     return (
         <div>
@@ -42,9 +43,20 @@ const MemberDasboard = () => {
                         <th>Isbn</th>
                         <th>Publisher</th>
                         <th>Publication Year</th>
+                        <th>Copies Available</th>
                         <th>Category</th>
-                        <th colSpan={2}>Action</th>
+                        <th colSpan={2}>Borrow | Return</th>
                     </tr>
+                    {book.map((book) => {
+                        <tr key={book.book_id}>
+                            <td>{book.book_id}</td>
+                            <td>{book.isbn}</td>
+                            <td>{book.publisher}</td>
+                            <td>{book.publication_year}</td>
+                            <td>{book.copies_available}</td>
+                            <td>{book.category}</td>
+                        </tr>
+                    })}
                   </table>
                 </>
 
