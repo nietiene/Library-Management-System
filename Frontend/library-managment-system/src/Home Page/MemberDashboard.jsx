@@ -20,8 +20,10 @@ const MemberDasboard = () => {
 
     axios.get(`http://localhost:3000/books/Book_List/available`, {withCredentials: true})
     .then((res) => {
-        setBook()
-    })
+        setBook(res.data.books);
+    }).catch((err) => {
+        console.log(err);
+    });
 
     return (
         <div>
@@ -33,7 +35,17 @@ const MemberDasboard = () => {
                   <input type="search" name="" />
                   
                   <h3>Available Books</h3>
-                  
+                  <table border={2}>
+                    <tr>
+                        <th>Book Code</th>
+                        <th>Book Title</th>
+                        <th>Isbn</th>
+                        <th>Publisher</th>
+                        <th>Publication Year</th>
+                        <th>Category</th>
+                        <th colSpan={2}>Action</th>
+                    </tr>
+                  </table>
                 </>
 
             ) : (
