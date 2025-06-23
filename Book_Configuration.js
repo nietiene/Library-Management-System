@@ -85,8 +85,12 @@ router.get('/search', (req, res) => {
     const searchedValue =  `%${search}%`;
     
     connection.query(sql, [searchedValue], (err, data) => {
-
-    })
-})
+        if (err) {
+            res.json({error: err.message});
+        } else {
+            res.json({searchedBook: data});
+        }
+    });
+});
 
 module.exports = router;
