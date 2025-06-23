@@ -37,6 +37,7 @@ app.use('/Update_Book', Book_Configuration);
 app.use('/Delete_Book', Book_Configuration);
 app.use('/Get_Sigle_Book', Book_Configuration);
 app.use('/books', Book_Configuration); // available books
+app.use('/books', Book_Configuration) // search book
 app.use('/Add_Author', Author_Configuration);
 app.use('/Author_List', Author_Configuration);
 app.use('/Update_Author', Author_Configuration);
