@@ -32,9 +32,12 @@ useEffect(() => {
 useEffect(() => {
     axios.get(`http://localhost:3000/books/search/new?query=java`, {withCredentials: true})
     .then((res) => {
-
+        setSearchedValue(res.data.searchedBook);
+    }).catch((err) => {
+        console.log(err);
     })
-})
+}, []);
+
     return (
         <div>
             {member ? (
