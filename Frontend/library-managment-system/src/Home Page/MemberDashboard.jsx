@@ -29,7 +29,6 @@ useEffect(() => {
 }, [])
 
 // Search book
-
 const handleSearch = (e) => { 
 
   e.preventDefault();
