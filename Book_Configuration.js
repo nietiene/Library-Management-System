@@ -69,7 +69,7 @@ router.get('/', (req, res) => {
 
 // Available Books
 
-router.get('/Book_List', (req, res) => {
+router.get('/Book_List/available', (req, res) => {
     const sql = "SELECT * FROM book WHERE copies_available > 0";
     connection.query(sql, (err, data) => {
         if (err) return res.status(500).json({ error: err.message });
