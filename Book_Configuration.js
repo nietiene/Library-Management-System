@@ -77,4 +77,16 @@ router.get('/Book_List/available', (req, res) => {
     });
 });
 
+// Search Boook
+
+router.get('/search', (req, res) => {
+    const search = req.query.query;
+    const sql = `SELECT * FROM book WHERE  title LIKE ?`;
+    const searchedValue =  `%${search}%`;
+    
+    connection.query(sql, [searchedValue], (err, data) => {
+
+    })
+})
+
 module.exports = router;
