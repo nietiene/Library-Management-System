@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 const MemberDasboard = () => {
 
     const [member, setMember] = useState(null);
+    const [book, setBook] = useState([]);
     
     useEffect(() => {
         axios.get(`http://localhost:3000/member/data/user`, {withCredentials: true})
@@ -13,7 +14,14 @@ const MemberDasboard = () => {
         }).catch((err) => {
             console.log(err);
         })
-    }, [])
+    }, []);
+
+    // Available Books
+
+    axios.get(`http://localhost:3000/books/Book_List/available`, {withCredentials: true})
+    .then((res) => {
+        setBook()
+    })
 
     return (
         <div>
