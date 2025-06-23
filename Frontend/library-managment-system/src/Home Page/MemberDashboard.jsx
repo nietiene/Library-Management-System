@@ -6,6 +6,7 @@ const MemberDasboard = () => {
 
     const [member, setMember] = useState(null);
     const [book, setBook] = useState([]);
+    const [searchedValue, setSearchedValue] = useState([]);
     
     useEffect(() => {
         axios.get(`http://localhost:3000/member/data/user`, {withCredentials: true})
@@ -26,7 +27,14 @@ useEffect(() => {
     });
 }, [])
 
+// Search book
 
+useEffect(() => {
+    axios.get(`http://localhost:3000/books/search/new?query=java`, {withCredentials: true})
+    .then((res) => {
+
+    })
+})
     return (
         <div>
             {member ? (

@@ -78,7 +78,6 @@ router.get('/Book_List/available', (req, res) => {
 });
 
 // Search Boook
-
 router.get('/search/new', (req, res) => {
     //http://localhost:3000/books/search/new?query=react js% to search in the postman
     const search = req.query.query;
