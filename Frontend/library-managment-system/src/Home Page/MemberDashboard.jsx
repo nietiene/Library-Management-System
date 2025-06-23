@@ -7,6 +7,7 @@ const MemberDasboard = () => {
     const [member, setMember] = useState(null);
     const [book, setBook] = useState([]);
     const [searchedValue, setSearchedValue] = useState([]);
+    const [query, setQuery] = useState("");
     
     useEffect(() => {
         axios.get(`http://localhost:3000/member/data/user`, {withCredentials: true})
@@ -30,10 +31,10 @@ useEffect(() => {
 // Search book
 
 const handleSearch = (e) => { 
-    
+
   e.preventDefault();
   useEffect(() => {
-      axios.get(`http://localhost:3000/books/search/new?query=java`, {withCredentials: true})
+      axios.get(`http://localhost:3000/books/search/new?query=${query}`, {withCredentials: true})
       .then((res) => {
           setSearchedValue(res.data.searchedBook);
       }).catch((err) => {
@@ -50,8 +51,11 @@ const handleSearch = (e) => {
                   <h2>Welcome {member.name} to member dashboard</h2>
       
                   <label>Search Book</label>
-                  <input type="search" name="" />
+                  <input type="search" placeholder="Search book"
+                  onChange={(e) => setQuery(e.target.value)}/>
                   
+                  <h3>Searched Book</h3>
+                  {}
                   <h3>Available Books</h3>
                   <table border={2}>
                     <tr>
