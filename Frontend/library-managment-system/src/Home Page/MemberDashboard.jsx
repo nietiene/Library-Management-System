@@ -47,16 +47,21 @@ useEffect(() => {
                         <th>Category</th>
                         <th colSpan={2}>Borrow | Return</th>
                     </tr>
-                    {book.map((book) => {
+                    <tbody>
+                     {book.map((book) => (
                         <tr key={book.book_id}>
                             <td>{book.book_id}</td>
+                            <td>{book.title}</td>
                             <td>{book.isbn}</td>
                             <td>{book.publisher}</td>
                             <td>{book.publication_year}</td>
                             <td>{book.copies_available}</td>
                             <td>{book.category}</td>
+                            <td><Link>Borrow</Link></td>
+                            <td><Link>Return</Link></td>
                         </tr>
-                    })}
+                     ))}
+                    </tbody>
                   </table>
                 </>
 
