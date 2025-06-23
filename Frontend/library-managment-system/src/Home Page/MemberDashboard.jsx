@@ -29,14 +29,19 @@ useEffect(() => {
 
 // Search book
 
-useEffect(() => {
-    axios.get(`http://localhost:3000/books/search/new?query=java`, {withCredentials: true})
-    .then((res) => {
-        setSearchedValue(res.data.searchedBook);
-    }).catch((err) => {
-        console.log(err);
-    })
-}, []);
+const handleSearch = (e) => { 
+    
+  e.preventDefault();
+  useEffect(() => {
+      axios.get(`http://localhost:3000/books/search/new?query=java`, {withCredentials: true})
+      .then((res) => {
+          setSearchedValue(res.data.searchedBook);
+      }).catch((err) => {
+          console.log(err);
+      })
+   }, []);
+}
+
 
     return (
         <div>
