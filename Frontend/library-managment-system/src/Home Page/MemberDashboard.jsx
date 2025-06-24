@@ -58,9 +58,8 @@ return () => clearTimeout(delaySearch);
       
                   <label>Search Book</label>
                   <input type="search" placeholder="Search book"
-                  onChange={(e) => setQuery(e.target.value)}/>
-
-                  <button onClick={handleSearch}>Search</button>
+                  onChange={(e) => setQuery(e.target.value)}
+                  value={query}/>
 
                   <h3>{searchedValue.length > 0 ? "Searched Book" : "Available books"}</h3>
 
