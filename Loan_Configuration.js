@@ -59,6 +59,9 @@ router.post('/return', (req, res) => {
 
       const UpdateLoan = `
                            UPDATE loan SET status = 'Returned'
+                           WHERE book_id = ? AND member_id ? AND status = 'Borrowed'
+                           ORDER BY loan_date DESC
+                           LIMIT 1
                            `
 })
 
