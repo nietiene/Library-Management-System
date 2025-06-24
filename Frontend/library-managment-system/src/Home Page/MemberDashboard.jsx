@@ -94,7 +94,7 @@ return () => clearTimeout(delaySearch);
                   </table>
 
        <Link to={`/borrow`}>Borrow</Link>
-       <Link>Return</Link>
+       <Link to={`/return`}>Return</Link>
 
                 </>
 
