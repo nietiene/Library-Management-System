@@ -4,8 +4,8 @@ const router = express.Router();
 
 router.post('/borrow', (req, res) => {
    console.log("session content", req.session);
-   console.log("received book_id", book_id);
     const { book_id } = req.body;
+    console.log("received book_id", book_id);
     const member_id = req.session.member_id;
     const staff_id = null;
     const loan_date = new Date();
