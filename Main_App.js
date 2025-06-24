@@ -46,7 +46,8 @@ app.use('/Get_Sigle_Book', Book_Configuration);
 app.use('/books', Book_Configuration); // available books
 app.use('/books', Book_Configuration); // search book
 app.use('/loan', Loan_Configuration); // Borrow a book
-app.use('/loan', Loan_Configuration);
+app.use('/loan', Loan_Configuration);  // return book
+app.use('/loan', Loan_Configuration) // view loan
 app.use('/Add_Author', Author_Configuration);
 app.use('/Author_List', Author_Configuration);
 app.use('/Update_Author', Author_Configuration);

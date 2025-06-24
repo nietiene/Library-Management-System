@@ -87,7 +87,7 @@ router.post('/return', (req, res) => {
 });
 
 //user view only his loan
-router.get('/loan/:member_id', (req, res) => {
+router.get('/view_loan/:member_id', (req, res) => {
    const member_id = req.params;
    const sql = "SELECT * FROM loan WHERE member_id = ?";
    connection.query(sql, [member_id], (err, data) => {
