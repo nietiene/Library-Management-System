@@ -34,6 +34,7 @@ const handleBorrow = () => {
 
             <input type="text" name="Enter a Book code" 
             value={book_id} onChange={(e) => setBook_id(e.target.value)}
+            placeholder="Enter book code"
             /> <br />
 
             <button onClick={handleBorrow}>Borrow</button>
