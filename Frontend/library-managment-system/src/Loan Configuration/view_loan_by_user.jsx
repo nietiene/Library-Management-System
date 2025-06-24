@@ -9,7 +9,7 @@ const View_loan = () => {
 
     axios.get(`http://localhost:3000/member/user`, {withCredentials: true})
     .then((res) => {
-        
+        if (res.data.memberInfo)
     })
     useEffect(() => {
         axios.get(`http://localhost:3000/loan/view_loan/${member_id}`, {withCredentials: true})
