@@ -76,7 +76,6 @@ return () => clearTimeout(delaySearch);
                         <th>Publication Year</th>
                         <th>Copies Available</th>
                         <th>Category</th>
-                        <th colSpan={2}>Borrow | Return</th>
                     </tr>
                     <tbody>
                      {(searchedValue.length > 0 ? searchedValue : book).map((book) => (
