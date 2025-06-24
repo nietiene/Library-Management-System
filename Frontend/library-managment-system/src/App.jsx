@@ -38,6 +38,7 @@ function App() {
               <Route path="/Login" element={<Login />}/>
               <Route path="/MemberAuth" element={<MemberLogin />}/>
               <Route path="/MemberDashboard" element={<MemberDasboard />}/>
+              <Route path="/borrow" element={<Borrow_book />}/>
           </Routes>
         </Router>
 
