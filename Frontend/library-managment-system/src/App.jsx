@@ -15,6 +15,8 @@ import Delete_Member from "./Member Configuration/Delete_Member"
 import Login from "./Authentication/login"
 import MemberLogin from "./Authentication/MemberAuth"
 import MemberDasboard from "./Home Page/MemberDashboard"
+import Borrow_book from "./Loan Configuration/borrow"
+
 function App() {
 
   return (
