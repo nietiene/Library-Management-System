@@ -62,7 +62,16 @@ router.post('/return', (req, res) => {
                            WHERE book_id = ? AND member_id ? AND status = 'Borrowed'
                            ORDER BY loan_date DESC
                            LIMIT 1
-                           `
+                           `;
+      connection.query(UpdateLoan, [book_id, member_id], (err, data) => {
+         if (err) {
+            return res.json({error: err.message});
+         } 
+
+         if (data.affectedRows === 0) {
+            return res.json({error: "No active loan found on this book"});
+         }
+      })                     
 })
 
 module.exports = router;
