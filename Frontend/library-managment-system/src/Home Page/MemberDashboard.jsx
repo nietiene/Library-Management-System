@@ -53,7 +53,12 @@ const handleSearch = (e) => {
                   onChange={(e) => setQuery(e.target.value)}/>
 
                   <button onClick={handleSearch}>Search</button>
+
                   <h3>{searchedValue.length > 0 ? "Searched Book" : "Available books"}</h3>
+
+                  {searchedValue.length === 0 && query != "" && (
+                    <p>No book found for <strong>{query}</strong></p>
+                  )}
                   <table border={2}>
                     <tr>
                         <th>Book Code</th>
@@ -66,7 +71,7 @@ const handleSearch = (e) => {
                         <th colSpan={2}>Borrow | Return</th>
                     </tr>
                     <tbody>
-                     {book.map((book) => (
+                     {(searchedValue.length > 0 ? searchedValue : book).map((book) => (
                         <tr key={book.book_id}>
                             <td>{book.book_id}</td>
                             <td>{book.title}</td>
@@ -81,6 +86,8 @@ const handleSearch = (e) => {
                      ))}
                     </tbody>
                   </table>
+
+
                 </>
 
             ) : (
