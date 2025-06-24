@@ -16,10 +16,10 @@ const handleBorrow = () => {
             { book_id },
             { withCredentials: true })
         .then((res) => {
-          setMessage(res.data.message || "Book broweed");
+          setMessage(res.data.message || "Book borrowed");
         }).catch((err) => {
             console.error(err)
-            setMessage(err.data.error); 
+            setMessage(err.response?.data?.error || "Some thing went wrong"); 
         })
 
 }   
