@@ -35,7 +35,7 @@ router.post('/borrow', (req, res) => {
                        (err2) => {
                           if (err2) return res.json({error: err2.message});
 
-                          const update = `UPDATE book SET copies_available = copies_available -1 WHERE book_id = ?`;
+                          const update = `UPDATE book SET copies_available = copies_available - 1 WHERE book_id = ?`;
                           connection.query(update, [book_id], (err3) => {
                              if (err3) return res.json({error: err3.message});
 

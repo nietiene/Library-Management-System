@@ -52,6 +52,7 @@ return () => clearTimeout(delaySearch);
 
     return (
         <div>
+
             {member ? (
                 <>
                   <h2>Welcome {member.name} to member dashboard</h2>
@@ -87,13 +88,13 @@ return () => clearTimeout(delaySearch);
                             <td>{book.publication_year}</td>
                             <td>{book.copies_available}</td>
                             <td>{book.category}</td>
-                            <td><Link>Borrow</Link></td>
-                            <td><Link>Return</Link></td>
                         </tr>
                      ))}
                     </tbody>
                   </table>
 
+       <Link to={`/borrow`}>Borrow</Link>
+       <Link>Return</Link>
 
                 </>
 
