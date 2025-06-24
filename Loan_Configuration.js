@@ -86,4 +86,15 @@ router.post('/return', (req, res) => {
       });                     
 });
 
+//user view only his loan
+router.get('/loan/:member_id', (req, res) => {
+   const member_id = req.params;
+   const sql = "SELECT * FROM loan WHERE member_id = ?";
+   connection.query(sql, [member_id], (err, data) => {
+      if (err) return res.json({error: err.message});
+
+      return res.json({loans: data});
+   });
+});
+
 module.exports = router;
