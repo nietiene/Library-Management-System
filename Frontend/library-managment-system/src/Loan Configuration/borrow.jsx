@@ -34,6 +34,8 @@ const handleBorrow = () => {
             /> <br />
 
             <button onClick={handleBorrow}>Borrow</button>
+
+            {message && <p>{message}</p>}
         </div>
     )
 }
