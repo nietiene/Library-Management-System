@@ -38,14 +38,16 @@ useEffect(() => {
                 setSearchedValue(res.data.searchedBook);
           }).catch((err) => {
                console.log(err);
-         })
+         });
+        } else { 
+            setSearchedValue([]);
         }
-    })
+    }, 300);
+
+return () => clearTimeout(delaySearch);
 
 
-
-})
-
+}, [query]);
 
 
     return (
