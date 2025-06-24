@@ -76,7 +76,13 @@ router.post('/return', (req, res) => {
                              UPDATE book SET copies_available = copies_available + 1
                              WHERE book_id = ?
                               `;
-                              
+         
+         connection.query(updatedBook, [book_id], (err2) => {
+                if (err2) return res.json({error: err2.message});
+                
+                res.json({message: "Book returned Successfully"});
+                
+         })                     
       })                     
 })
 
