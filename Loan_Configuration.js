@@ -48,4 +48,18 @@ router.post('/borrow', (req, res) => {
 
 });
 
+
+router.post('/return', (req, res) => {
+      const { book_id } = req.body;
+      const member_id = req.session.member_id;
+      
+      if (!member_id || !book_id) {
+         return res.json({error: "Missing book id or member id"});
+      }
+
+      const UpdateLoan = `
+                           UPDATE loan SET status = 'Returned'
+                           `
+})
+
 module.exports = router;
