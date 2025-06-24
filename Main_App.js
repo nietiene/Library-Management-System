@@ -14,17 +14,23 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 
-app.use(session({
-    secret: 'myScretKey',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false }
-
-}))
 app.use(cors({
     origin:'http://localhost:5173',
     credentials: true
 }));
+
+app.use(session({
+    secret: 'myScretKey',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { 
+        secure: false,
+        httpOnly: true,
+        sameSite: 'lax' // allow frontend and backend
+     }
+
+}))
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 
