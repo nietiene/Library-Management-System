@@ -3,6 +3,8 @@ const connection = require("./Conn");
 const router = express.Router();
 
 router.post('/borrow', (req, res) => {
+   console.log("session content", req.session);
+   console.log("received book_id", book_id);
     const { book_id } = req.body;
     const member_id = req.session.member_id;
     const staff_id = null;
@@ -14,7 +16,7 @@ router.post('/borrow', (req, res) => {
     const status = "Borrowed";
 
     if (!member_id || !book_id) {
-        return res.json({error: "Missing book or book ID"});
+        return res.json({error: "Missing book or member ID"});
     }
 
     const sql = `SELECT copies_available FROM book WHERE book_id = ?`;
