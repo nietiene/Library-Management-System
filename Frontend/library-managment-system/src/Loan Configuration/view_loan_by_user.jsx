@@ -3,7 +3,7 @@ import e from "express";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const view_loan = () => {
+const View_loan = () => {
     const [loan, setLoan] = useState({});
     const [message, setMessage] = useState("");
     const member_id = useParams();
@@ -35,8 +35,14 @@ const view_loan = () => {
 
             
             {loan.map((loan) => {
-                <tr>
-                    
+                <tr key={loan.loan_id}>
+                    <td>{loan.loan_id}</td>
+                    <td>{loan.loan_id}</td>
+                    <td>{loan.loan_id}</td>
+                    <td>{loan.loan_id}</td>
+                    <td>{loan.loan_id}</td>
+                    <td>{loan.loan_id}</td>
+                    <td>{loan.loan_id}</td>
                 </tr>
             })}
             </table>
@@ -45,4 +51,4 @@ const view_loan = () => {
 
 }
 
-export default view_loan;
+export default View_loan;

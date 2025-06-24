@@ -17,6 +17,7 @@ import MemberLogin from "./Authentication/MemberAuth"
 import MemberDasboard from "./Home Page/MemberDashboard"
 import Borrow_book from "./Loan Configuration/borrow"
 import Return_book from "./Loan Configuration/return"
+import View_loan from "./Loan Configuration/view_loan_by_user"
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
               <Route path="/MemberDashboard" element={<MemberDasboard />}/>
               <Route path="/borrow" element={<Borrow_book />}/>
               <Route path="/return" element={<Return_book />}/>
+              <Route path="/viewLoan" element={<View_loan />}/>
           </Routes>
         </Router>
 
