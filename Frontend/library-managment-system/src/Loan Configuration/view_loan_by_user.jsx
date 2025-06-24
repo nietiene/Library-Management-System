@@ -32,7 +32,13 @@ const view_loan = () => {
                     <th>Return Date</th>
                     <th>Status</th>
                 </tr>
-                
+
+            
+            {loan.map((loan) => {
+                <tr>
+                    
+                </tr>
+            })}
             </table>
         </div>
     )
