@@ -32,6 +32,7 @@ const view_loan = () => {
                     <th>Return Date</th>
                     <th>Status</th>
                 </tr>
+                
             </table>
         </div>
     )

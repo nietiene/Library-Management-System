@@ -88,8 +88,19 @@ router.post('/return', (req, res) => {
 
 //user view only his loan
 router.get('/view_loan/:member_id', (req, res) => {
-   const member_id = req.params;
-   const sql = "SELECT * FROM loan WHERE member_id = ?";
+   const  { member_id } = req.params;
+   const sql = `SELECT 
+                l.loan_id,
+                l.member_id,
+                m.name,
+                l.book_id,
+                b.title,
+                l.loan_date,
+                l.return_date,
+                l.status
+                FROM loan l JOIN book b ON l.book_id = b.book_id
+                JOIN member m ON l.member_id = m.member_id  WHERE l.member_id = ?
+                ORDER BY l.loan_date`;
    connection.query(sql, [member_id], (err, data) => {
       if (err) return res.json({error: err.message});
 
