@@ -28,7 +28,10 @@ router.post('/Auth', (req, res) => {
       res.json({error: err.message});
 
     } if (data.length > 0) {
- 
+   
+         const member = data[0];
+         req.session.member_id  = member.member_id;
+         
          req.session.memberInfo = {
             member_id: data[0].member_id,
             name: data[0].name
