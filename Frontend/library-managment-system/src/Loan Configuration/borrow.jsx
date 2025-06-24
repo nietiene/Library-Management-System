@@ -9,9 +9,14 @@ const Borrow_book = () => {
 
     useEffect(() => {
         
-        axios.post(`http://localhost:3000/loan/borrow`, {withCredentials: true})
+        axios.post(`http://localhost:3000/loan/borrow`, 
+            { book_id },
+            { withCredentials: true })
         .then((res) => {
-         
+          setMessage(res.data.message || "Book broweed");
+        }).catch((err) => {
+            console.error(err)
+            setMessage(err.data.error); 
         })
     })
 
