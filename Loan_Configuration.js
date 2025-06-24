@@ -13,7 +13,7 @@ router.post('/borrow', (req, res) => {
     
     const status = "Borrowed";
 
-    if (!member_id && !book_id) {
+    if (!member_id || !book_id) {
         return res.json({error: "Missing book or book ID"});
     }
 
@@ -21,7 +21,7 @@ router.post('/borrow', (req, res) => {
     connection.query(sql, [book_id], (err, result) => {
        if (err) return res.json({error: err.message});
 
-       if (result.length === 0 && result[0].copies_available < 1) {
+       if (result.length === 0) {
         return res.json({error: "Book not available"});
        }
 
