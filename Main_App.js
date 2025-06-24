@@ -5,6 +5,7 @@ const session = require("express-session");
 const Book_Configuration = require("./Book_Configuration");
 const Author_Configuration = require("./Author_Configuration");
 const Member_Configuration = require('./Member_Configuration');
+const Loan_Configuration = require('./Loan_Configuration');
 const Login = require("./login");
 const logout = require("./logout");
 
@@ -37,7 +38,8 @@ app.use('/Update_Book', Book_Configuration);
 app.use('/Delete_Book', Book_Configuration);
 app.use('/Get_Sigle_Book', Book_Configuration);
 app.use('/books', Book_Configuration); // available books
-app.use('/books', Book_Configuration) // search book
+app.use('/books', Book_Configuration); // search book
+app.use('/loan', Loan_Configuration); // Borrow a book
 app.use('/Add_Author', Author_Configuration);
 app.use('/Author_List', Author_Configuration);
 app.use('/Update_Author', Author_Configuration);

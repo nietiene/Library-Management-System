@@ -2,7 +2,7 @@ const express = require("express");
 const connection = require("./Conn");
 const router = express.Router();
 
-router.get('/borrow', (req, res) => {
+router.post('/borrow', (req, res) => {
     const {book_id} = req.body;
     const member_id = req.session.member_id;
     const staff_id = null;
@@ -29,15 +29,21 @@ router.get('/borrow', (req, res) => {
                         VALUES(?, ?, ?, ?, ?, ?)`;
        
       connection.query(loanSql,
-                       [book_id, member_id, loan_date, return_date, status],
+                       [book_id, member_id, staff_id, loan_date, return_date, status],
                        (err2) => {
-                          if (err2) return
+                          if (err2) return res.json({error: err2.message});
+
+                          const update = `UPDATE book SET copies_available = copies_available -1 WHERE book_id = ?`;
+                          connection.query(update, [book_id], (err3) => {
+                             if (err3) return res.json({error: err3.message});
+
+                             res.json({message: "Book borrowed successfully"});
+                          });
                        }
       )                  
     });
 
 
 });
-
 
 module.exports = router;
