@@ -37,7 +37,7 @@ const handleReturn = () => {
             placeholder="Enter book code"
             /> <br />
 
-            <button onClick={handleReturn}>Borrow</button>
+            <button onClick={handleReturn}>Return</button>
 
             {message && <p style={{color: 'green'}}>{message}</p>}
         </div>
