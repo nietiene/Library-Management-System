@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 const View_loan = () => {
     const [loan, setLoan] = useState([]);
     const [message, setMessage] = useState("");
-    const member_id = useParams();
+    const { member_id } = useParams();
 
     useEffect(() => {
         axios.get(`http://localhost:3000/loan/view_loan/${member_id}`, {withCredentials: true})
@@ -33,17 +33,18 @@ const View_loan = () => {
                 </tr>
 
             
-            {loan.map((loan) => {
+            {loan.map((loan) => (
+                // loan_id, book_id, member_id, staff_id, loan_date, return_date, actual_return_date, status
                 <tr key={loan.loan_id}>
-                    <td>{loan.loan_id}</td>
-                    <td>{loan.loan_id}</td>
-                    <td>{loan.loan_id}</td>
-                    <td>{loan.loan_id}</td>
-                    <td>{loan.loan_id}</td>
-                    <td>{loan.loan_id}</td>
-                    <td>{loan.loan_id}</td>
+                    <td>{loan.book_id}</td>
+                    <td>{loan.title}</td>
+                    <td>{loan.member_id}</td>
+                    <td>{loan.name}</td>
+                    <td>{loan.loan_date}</td>
+                    <td>{loan.return_date}</td>
+                    <td>{loan.status}</td>
                 </tr>
-            })}
+            ))}
             </table>
         </div>
     )
