@@ -11,7 +11,7 @@ const handleReturn = () => {
         setMessage("Please Enter some book_id");
         return;
     }
-        axios.post(`http://localhost:3000/loan/borrow`, 
+        axios.post(`http://localhost:3000/loan/return`, 
             { book_id },
             { withCredentials: true })
         .then((res) => {
@@ -30,18 +30,18 @@ const handleReturn = () => {
 
     return (
         <div>
-            <h3>Borrow a book</h3>
+            <h3>Return a book</h3>
 
             <input type="text" name="Enter a Book code" 
             value={book_id} onChange={(e) => setBook_id(e.target.value)}
             placeholder="Enter book code"
             /> <br />
 
-            <button onClick={handleBorrow}>Borrow</button>
+            <button onClick={handleReturn}>Borrow</button>
 
-            {message && <p>{message}</p>}
+            {message && <p style={{color: 'green'}}>{message}</p>}
         </div>
     )
 }
 
-export default Borrow_book
+export default Return_book
