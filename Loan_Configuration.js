@@ -29,7 +29,10 @@ router.get('/borrow', (req, res) => {
                         VALUES(?, ?, ?, ?, ?, ?)`;
        
       connection.query(loanSql,
-                     
+                       [book_id, member_id, loan_date, return_date, status],
+                       (err2) => {
+                          if (err2) return
+                       }
       )                  
     });
 
