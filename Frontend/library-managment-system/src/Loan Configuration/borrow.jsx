@@ -39,3 +39,5 @@ const handleBorrow = () => {
         </div>
     )
 }
+
+export default Borrow_book
