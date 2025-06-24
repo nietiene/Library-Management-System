@@ -71,6 +71,10 @@ router.post('/return', (req, res) => {
          if (data.affectedRows === 0) {
             return res.json({error: "No active loan found on this book"});
          }
+
+         const updatedLoan = `
+                             UPDATE
+                              `
       })                     
 })
 
