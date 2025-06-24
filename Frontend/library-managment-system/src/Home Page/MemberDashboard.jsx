@@ -53,16 +53,7 @@ const handleSearch = (e) => {
                   onChange={(e) => setQuery(e.target.value)}/>
 
                   <button onClick={handleSearch}>Search</button>
-                  
-                  <h3>Searched Book</h3>
-                       {searchedValue.map((book) => (
-                        <ul key={book.book_id}>
-                           <li>{book.title}</li>
-                           <li>{book.isbn}</li>
-                        </ul>
-                       ))}
-
-                  <h3>Available Books</h3>
+                  <h3>{searchedValue.length > 0 ? "Searched Book" : "Available books"}</h3>
                   <table border={2}>
                     <tr>
                         <th>Book Code</th>
