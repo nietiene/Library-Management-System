@@ -7,6 +7,10 @@ const View_loan = () => {
     const [message, setMessage] = useState("");
     const { member_id } = useParams();
 
+    axios.get(`http://localhost:3000/member/user`, {withCredentials: true})
+    .then((res) => {
+        
+    })
     useEffect(() => {
         axios.get(`http://localhost:3000/loan/view_loan/${member_id}`, {withCredentials: true})
         .then((res) => {
@@ -14,7 +18,7 @@ const View_loan = () => {
         }).catch((err) => {
             setMessage(err.data.error);
         })
-    }, []);
+    }, [member_id]);
 
     return (
         <div>
