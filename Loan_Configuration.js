@@ -3,7 +3,7 @@ const connection = require("./Conn");
 const router = express.Router();
 
 router.post('/borrow', (req, res) => {
-    const {book_id} = req.body;
+    const { book_id } = req.body;
     const member_id = req.session.member_id;
     const staff_id = null;
     const loan_date = new Date();

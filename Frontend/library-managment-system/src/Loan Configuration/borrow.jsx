@@ -15,7 +15,11 @@ const handleBorrow = () => {
             { book_id },
             { withCredentials: true })
         .then((res) => {
-          setMessage(res.data.message || "Book borrowed");
+            if (res.data.error) {
+                setMessage(res.data.error)
+            } else {
+                  setMessage(res.data.message || "Book borrowed");
+            }
         }).catch((err) => {
             console.error(err)
             setMessage(err.response?.data?.error || "Some thing went wrong"); 
