@@ -33,15 +33,15 @@ useEffect(() => {
 useEffect(() => {
     const delaySearch = setTimeout(() => {
         if (query.trim() != "") {
-            
+           axios.get(`http://localhost:3000/books/search/new?query=${query}`, {withCredentials: true})
+           .then((res) => {
+                setSearchedValue(res.data.searchedBook);
+          }).catch((err) => {
+               console.log(err);
+         })
         }
     })
-      axios.get(`http://localhost:3000/books/search/new?query=${query}`, {withCredentials: true})
-      .then((res) => {
-          setSearchedValue(res.data.searchedBook);
-      }).catch((err) => {
-          console.log(err);
-      })
+
 
 
 })
