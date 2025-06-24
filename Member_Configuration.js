@@ -31,7 +31,8 @@ router.post('/Auth', (req, res) => {
    
          const member = data[0];
          req.session.member_id  = member.member_id;
-         
+         console.log("Login session:", req.session);
+
          req.session.memberInfo = {
             member_id: data[0].member_id,
             name: data[0].name
