@@ -72,9 +72,11 @@ router.post('/return', (req, res) => {
             return res.json({error: "No active loan found on this book"});
          }
 
-         const updatedLoan = `
-                             UPDATE
-                              `
+         const updatedBook = `
+                             UPDATE book SET copies_available = copies_available + 1
+                             WHERE book_id = ?
+                              `;
+                              
       })                     
 })
 
