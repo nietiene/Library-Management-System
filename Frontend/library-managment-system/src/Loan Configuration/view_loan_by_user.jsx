@@ -1,10 +1,9 @@
 import axios from "axios";
-import e from "express";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 const View_loan = () => {
-    const [loan, setLoan] = useState({});
+    const [loan, setLoan] = useState([]);
     const [message, setMessage] = useState("");
     const member_id = useParams();
 
