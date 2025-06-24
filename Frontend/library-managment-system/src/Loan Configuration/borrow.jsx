@@ -7,6 +7,11 @@ const Borrow_book = () => {
     const [book_id, setBook_id] = useState("");
     const [message, setMessage] = useState("");
 
+const handleBorrow = () => {
+    if (!book_id) {
+        setMessage("Please Enter some book_id");
+        return;
+    }
         axios.post(`http://localhost:3000/loan/borrow`, 
             { book_id },
             { withCredentials: true })
@@ -17,6 +22,8 @@ const Borrow_book = () => {
             setMessage(err.data.error); 
         })
 
+}   
+
 
     return (
         <div>
@@ -25,6 +32,8 @@ const Borrow_book = () => {
             <input type="text" name="Enter a Book code" 
             value={book_id} onChange={(e) => setBook_id(e.target.value)}
             /> <br />
+
+            <button onClick={handleBorrow}>Borrow</button>
         </div>
     )
 }
