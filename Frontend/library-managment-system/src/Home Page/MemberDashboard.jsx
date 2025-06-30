@@ -68,15 +68,14 @@ return () => clearTimeout(delaySearch);
                   />
 
       </div>
-
                   <h3 className="text-lg font-semibold mb-2">{searchedValue.length > 0 ? "Searched Book" : "Available books"}</h3>
 
                   {searchedValue.length === 0 && query != "" && (
                     <p className="text-red-500 mb-4">No book found for <strong>{query}</strong></p>
                   )}
-                  <div>
+                  <div className="overflow-x-auto roundend-lg shadow-lg border border-gray-500 mb-6">
 
-                  <table border={2}>
+                  <table border={2} className="min-w-full bg-white divide-gray-500">
                     <tr>
                         <th>Book Code</th>
                         <th>Book Title</th>
