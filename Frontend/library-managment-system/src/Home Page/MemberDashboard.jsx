@@ -100,10 +100,10 @@ return () => clearTimeout(delaySearch);
                     </tbody>
                   </table>      
                   </div>
-                  <div>
-                      <Link to={`/borrow`}>Borrow</Link>
-                      <Link to={`/return`}>Return</Link>
-                      <Link to={`/viewLoan`}>View loans</Link>      
+                  <div className="flex gap-4">
+                      <Link to={`/borrow`} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition">Borrow</Link>
+                      <Link to={`/return`} className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700 transition">Return</Link>
+                      <Link to={`/viewLoan`} className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-700 transition">View loans</Link>      
                  </div>   
                 </div>
                 </>
