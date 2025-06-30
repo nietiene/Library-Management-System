@@ -63,7 +63,8 @@ return () => clearTimeout(delaySearch);
                   <label className="block text-sm font-medium text-gray-700 mb-1">Search Book</label>
                   <input type="search" placeholder="Search book"
                   onChange={(e) => setQuery(e.target.value)}
-                  value={query}/>
+                  value={query}
+                  className="w-full p-2 border border-gray-500 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500"/>
 
       </div>
 
