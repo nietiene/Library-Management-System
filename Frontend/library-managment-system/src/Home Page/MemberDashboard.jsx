@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const MemberDasboard = () => {
 
@@ -8,6 +8,8 @@ const MemberDasboard = () => {
     const [book, setBook] = useState([]);
     const [searchedValue, setSearchedValue] = useState([]);
     const [query, setQuery] = useState("");
+    const [message, setMessage] = useState("");
+    const navigate = useNavigate();
     
     useEffect(() => {
         axios.get(`http://localhost:3000/member/data/user`, {withCredentials: true})
@@ -49,6 +51,15 @@ return () => clearTimeout(delaySearch);
 
 }, [query]);
 
+const handleLogout = () => {
+    axios.get("http://localhost:3000/auth/logout", {withCredentials: true})
+    .then((res) => {
+           setMessage(res.data.message);
+           navigate('/MemberAuth');
+    }).catch((err) => {
+        setMessage(err.data.error);
+    })
+}
 
     return (
         <div className="min-h-screen bg-gray-100 p-6">
