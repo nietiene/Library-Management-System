@@ -64,11 +64,12 @@ return () => clearTimeout(delaySearch);
                   <input type="search" placeholder="Search book"
                   onChange={(e) => setQuery(e.target.value)}
                   value={query}
-                  className="w-full p-2 border border-gray-500 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500"/>
+                  className="w-full p-2 border border-gray-500 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  />
 
       </div>
 
-                  <h3>{searchedValue.length > 0 ? "Searched Book" : "Available books"}</h3>
+                  <h3 className="text-lg font-semibold mb-2">{searchedValue.length > 0 ? "Searched Book" : "Available books"}</h3>
 
                   {searchedValue.length === 0 && query != "" && (
                     <p>No book found for <strong>{query}</strong></p>
