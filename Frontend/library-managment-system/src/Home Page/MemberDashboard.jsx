@@ -110,7 +110,7 @@ return () => clearTimeout(delaySearch);
 
             ) : (
                 <>
-                <h2>Loading......</h2>
+                <h2 className="text-center text-lg font-semibold text-gray-500">Loading......</h2>
                 </>
             )}
 
