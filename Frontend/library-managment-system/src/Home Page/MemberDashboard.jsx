@@ -51,10 +51,12 @@ return () => clearTimeout(delaySearch);
 
 
     return (
-        <div>
+        <div className="min-h-screen bg-gray-100 p-6">
 
             {member ? (
                 <>
+                <div>
+
                   <h2>Welcome {member.name} to member dashboard</h2>
       
                   <label>Search Book</label>
@@ -94,8 +96,8 @@ return () => clearTimeout(delaySearch);
 
        <Link to={`/borrow`}>Borrow</Link>
        <Link to={`/return`}>Return</Link>
-       <Link to={`/viewLoan`}>View loans</Link>
-
+       <Link to={`/viewLoan`}>View loans</Link>      
+                </div>
                 </>
 
             ) : (
