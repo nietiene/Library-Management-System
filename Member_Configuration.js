@@ -104,7 +104,13 @@ router.delete('/:member_id', (req, res) => {
       }) 
 });
 
-
+router.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) res.json({error: err.message}); 
+            
+    res.json({message: "Logged out successfully"});
+  })
+})
 
 
 
