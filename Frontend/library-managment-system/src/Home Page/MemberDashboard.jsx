@@ -85,25 +85,26 @@ return () => clearTimeout(delaySearch);
                         <th className="px-4 py-2 text-left">Copies Available</th>
                         <th className="px-4 py-2 text-left">Category</th>
                     </tr>
-                    <tbody>
+                    <tbody className="divide-y divide-gray-500">
                      {(searchedValue.length > 0 ? searchedValue : book).map((book) => (
                         <tr key={book.book_id}>
-                            <td>{book.book_id}</td>
-                            <td>{book.title}</td>
-                            <td>{book.isbn}</td>
-                            <td>{book.publisher}</td>
-                            <td>{book.publication_year}</td>
-                            <td>{book.copies_available}</td>
-                            <td>{book.category}</td>
+                            <td className="px-4 py-2">{book.book_id}</td>
+                            <td className="px-4 py-2">{book.title}</td>
+                            <td className="px-4 py-2">{book.isbn}</td>
+                            <td className="px-4 py-2">{book.publisher}</td>
+                            <td className="px-4 py-2">{book.publication_year}</td>
+                            <td className="px-4 py-2">{book.copies_available}</td>
+                            <td className="px-4 py-2">{book.category}</td>
                         </tr>
                      ))}
                     </tbody>
-                  </table>
-                    
+                  </table>      
                   </div>
-       <Link to={`/borrow`}>Borrow</Link>
-       <Link to={`/return`}>Return</Link>
-       <Link to={`/viewLoan`}>View loans</Link>      
+                  <div>
+                      <Link to={`/borrow`}>Borrow</Link>
+                      <Link to={`/return`}>Return</Link>
+                      <Link to={`/viewLoan`}>View loans</Link>      
+                 </div>   
                 </div>
                 </>
 
