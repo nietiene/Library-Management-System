@@ -76,14 +76,14 @@ return () => clearTimeout(delaySearch);
                   <div className="overflow-x-auto roundend-lg shadow-lg border border-gray-500 mb-6">
 
                   <table border={2} className="min-w-full bg-white divide-gray-500 text-sm text-gray-500">
-                    <tr>
-                        <th>Book Code</th>
-                        <th>Book Title</th>
-                        <th>Isbn</th>
-                        <th>Publisher</th>
-                        <th>Publication Year</th>
-                        <th>Copies Available</th>
-                        <th>Category</th>
+                    <tr className="bg-gray-50">
+                        <th className="px-4 py-2 text-left">Book Code</th>
+                        <th className="px-4 py-2 text-left">Book Title</th>
+                        <th className="px-4 py-2 text-left">Isbn</th>
+                        <th className="px-4 py-2 text-left">Publisher</th>
+                        <th className="px-4 py-2 text-left">Publication Year</th>
+                        <th className="px-4 py-2 text-left">Copies Available</th>
+                        <th className="px-4 py-2 text-left">Category</th>
                     </tr>
                     <tbody>
                      {(searchedValue.length > 0 ? searchedValue : book).map((book) => (
