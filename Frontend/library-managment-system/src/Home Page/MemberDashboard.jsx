@@ -59,10 +59,13 @@ return () => clearTimeout(delaySearch);
 
                   <h2 className="text-2xl font-bold mb-4">Welcome {member.name} to member dashboard</h2>
       
-                  <label>Search Book</label>
+      <div className="mb-6">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Search Book</label>
                   <input type="search" placeholder="Search book"
                   onChange={(e) => setQuery(e.target.value)}
                   value={query}/>
+
+      </div>
 
                   <h3>{searchedValue.length > 0 ? "Searched Book" : "Available books"}</h3>
 
