@@ -55,9 +55,9 @@ return () => clearTimeout(delaySearch);
 
             {member ? (
                 <>
-                <div>
+                <div className="max-x-7xl mx-auto">
 
-                  <h2>Welcome {member.name} to member dashboard</h2>
+                  <h2 className="text-2xl font-bold mb-4">Welcome {member.name} to member dashboard</h2>
       
                   <label>Search Book</label>
                   <input type="search" placeholder="Search book"
