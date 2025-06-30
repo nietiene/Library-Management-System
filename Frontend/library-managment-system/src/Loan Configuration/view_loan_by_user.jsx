@@ -24,10 +24,11 @@ const View_loan = () => {
         console.log(err);
      } );
 
-    }, [member_id]);
+    }, []);
 
     return (
         <div>
+        {message && <p>{message}</p>}
             <h2>Your Loans</h2>
             <table border={2} cellPadding={5}>
                 <tr>
