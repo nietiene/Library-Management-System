@@ -72,8 +72,10 @@ return () => clearTimeout(delaySearch);
                   <h3 className="text-lg font-semibold mb-2">{searchedValue.length > 0 ? "Searched Book" : "Available books"}</h3>
 
                   {searchedValue.length === 0 && query != "" && (
-                    <p>No book found for <strong>{query}</strong></p>
+                    <p className="text-red-500 mb-4">No book found for <strong>{query}</strong></p>
                   )}
+                  <div>
+
                   <table border={2}>
                     <tr>
                         <th>Book Code</th>
@@ -98,7 +100,8 @@ return () => clearTimeout(delaySearch);
                      ))}
                     </tbody>
                   </table>
-
+                    
+                  </div>
        <Link to={`/borrow`}>Borrow</Link>
        <Link to={`/return`}>Return</Link>
        <Link to={`/viewLoan`}>View loans</Link>      
