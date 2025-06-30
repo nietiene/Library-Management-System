@@ -94,6 +94,7 @@ return () => clearTimeout(delaySearch);
 
        <Link to={`/borrow`}>Borrow</Link>
        <Link to={`/return`}>Return</Link>
+       <Link to={`/viewLoan`}>View loans</Link>
 
                 </>
 
